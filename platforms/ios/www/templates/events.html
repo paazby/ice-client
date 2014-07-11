@@ -1,0 +1,10 @@
+<ion-view title="Events">
+  <ion-content class="has-header">
+    <ion-list>
+      <!-- <ion-item ng-repeat="(friendEmail, friend) in friends" ng-click='sup(friend)'> -->
+      <ion-item ng-repeat="event in events" ng-click='showEvent()'>
+        {{event}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
