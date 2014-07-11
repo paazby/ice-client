@@ -29,6 +29,10 @@ app.run(function($ionicPlatform) {
       controller: 'SignInCtrl'
     })
 
+    .state('authFacebook', {
+      url: '/auth/facebook',
+    })
+
     .state('tab', {
       url: '/tab',
       abstract: true,
