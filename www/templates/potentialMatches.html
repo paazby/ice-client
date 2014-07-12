@@ -5,7 +5,7 @@
 <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
   <ion-slide ng-repeat='match in potentialMatches' title="title">
     <div class="box blue">
-      <img src={{match}} />
+      <img ng-src={{match}} ng-click='all()'/>
     </div>
   </ion-slide ng-repeat-end>
 </ion-slide-box>
