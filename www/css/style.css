@@ -1,1 +1,21 @@
 /* Empty. Add your own CSS if you like */
+.box {
+  height: 100vh; /* idk if this is compatible with mobile cuz it's weird*/
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pink {
+  background-color: pink;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -29,14 +29,10 @@ app.run(function($ionicPlatform) {
       controller: 'SignInCtrl'
     })
 
-    .state('authFacebook', {
-      url: '/auth/facebook',
-    })
-
     .state('tab', {
       url: '/tab',
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: "../templates/tabs.html"
     })
 
     .state('tab.events', {
@@ -48,7 +44,7 @@ app.run(function($ionicPlatform) {
         }
       }
     })
-
+    
     .state('tab.matches', {
       url: '/matches',
       views: {
@@ -57,6 +53,18 @@ app.run(function($ionicPlatform) {
           controller: 'MatchesCtrl'
         }
       }
+    })
+
+    // .state('slide', {
+    //   url: '/slide',
+    //   abstract: true,
+    //   templateUrl: "../templates/slides.html"
+    // })
+
+    .state('potentialMatches', {
+      url: '/potentialMatches',
+      templateUrl: '../templates/potentialMatches.html',
+      controller: 'PotentialMatchesCtrl'
     })
 
 

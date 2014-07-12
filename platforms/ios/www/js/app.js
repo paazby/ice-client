@@ -32,7 +32,7 @@ app.run(function($ionicPlatform) {
     .state('tab', {
       url: '/tab',
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: "../templates/tabs.html"
     })
 
     .state('tab.events', {
@@ -43,6 +43,28 @@ app.run(function($ionicPlatform) {
           controller: 'EventsCtrl'
         }
       }
+    })
+    
+    .state('tab.matches', {
+      url: '/matches',
+      views: {
+        'tab-matches': {
+          templateUrl: '../templates/matches.html',
+          controller: 'MatchesCtrl'
+        }
+      }
+    })
+
+    // .state('slide', {
+    //   url: '/slide',
+    //   abstract: true,
+    //   templateUrl: "../templates/slides.html"
+    // })
+
+    .state('potentialMatches', {
+      url: '/potentialMatches',
+      templateUrl: '../templates/potentialMatches.html',
+      controller: 'PotentialMatchesCtrl'
     })
 
 
