@@ -55,11 +55,11 @@ app.run(function($ionicPlatform) {
       }
     })
 
-    // .state('slide', {
-    //   url: '/slide',
-    //   abstract: true,
-    //   templateUrl: "../templates/slides.html"
-    // })
+    .state('potentialEvents', {
+      url: '/potentialEvents',
+      templateUrl: "../templates/potentialEvents.html",
+      controller: 'PotentialEventsCtrl'
+    })
 
     .state('potentialMatches', {
       url: '/potentialMatches',
