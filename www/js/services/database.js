@@ -13,6 +13,10 @@ app.factory('Database', function($http){
       .error(function(error){
        console.log('Error in Database.all()', error)
       })
+    },
+
+    isMatch: function() {
+      return true;
     }
   };
 

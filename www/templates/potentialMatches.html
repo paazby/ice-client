@@ -3,7 +3,7 @@
     <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
       <ion-slide ng-repeat='match in potentialMatches' title="title">
         <div class="box blue">
-          <img ng-src={{match}} ng-click='all()'/>
+          <img ng-src={{match}} ng-click='like()'/>
         </div>
       </ion-slide ng-repeat-end>
     </ion-slide-box>
