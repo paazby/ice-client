@@ -22,7 +22,9 @@
   </head>
 
   <body ng-app="icebreaker">
-    <ion-nav-view></ion-nav-view>
+    <ion-nav-bar class="bar-positive nav-title-slide-ios7">
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view class="slide-left-right">
 
     <script src="js/app.js"></script>
     <script src='js/controllers/SignInCtrl.js'></script>
@@ -30,6 +32,7 @@
     <script src='js/controllers/MatchesCtrl.js'></script>
     <script src='js/controllers/PotentialMatchesCtrl.js'></script>
     <script src='js/controllers/PotentialEventsCtrl.js'></script>
+    <script src='js/controllers/SpecificMatchCtrl.js'></script>
     <script src='js/services/auth.js'></script>
     <script src='js/services/database.js'></script>
   </body>

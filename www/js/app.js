@@ -67,5 +67,11 @@ app.run(function($ionicPlatform) {
       controller: 'PotentialMatchesCtrl'
     })
 
+    .state('specificMatch', {
+      url: '/specificMatch',
+      templateUrl: '../templates/specificMatch.html',
+      controller: 'SpecificMatchCtrl'
+    })
+
 
 })
