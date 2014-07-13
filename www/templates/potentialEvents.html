@@ -1,11 +1,9 @@
-<ion-view title="Potential Events">
-  <ion-content >
-    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
-      <ion-slide ng-repeat='event in potentialEvents' title="title">
-        <div class="box">
-          <img ng-src={{event}} ng-click='all()'/>
-        </div>
-      </ion-slide ng-repeat-end>
-    </ion-slide-box>
+<ion-view title='Potential Events'>
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="event in events" ng-click='showEvent()'>
+        {{event}}
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

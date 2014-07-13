@@ -1,10 +1,11 @@
-<ion-view title='Events'>
-  <ion-content class="has-header">
-    <ion-list>
-      <!-- <ion-item ng-repeat="(friendEmail, friend) in friends" ng-click='sup(friend)'> -->
-      <ion-item ng-repeat="event in events" ng-click='showEvent()'>
-        {{event}}
-      </ion-item>
-    </ion-list>
+<ion-view title="Events">
+  <ion-content >
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+      <ion-slide ng-repeat='event in events' title="title">
+        <div class="box">
+          <img ng-src={{event}} ng-click='all()'/>
+        </div>
+      </ion-slide ng-repeat-end>
+    </ion-slide-box>
   </ion-content>
 </ion-view>

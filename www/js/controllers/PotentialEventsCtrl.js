@@ -1,12 +1,12 @@
-app.controller('PotentialEventsCtrl', function($scope, $state, Database) {
+app.controller('PotentialEventsCtrl', function($scope, $state, $location) {
 
-  $scope.potentialEvents = [
-    'http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg',
-    'http://cdn.onlythebeat.com/wp-content/uploads/2013/03/Paradiso-Wide-OTB1.jpg',
-    'http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg'
-  ];
+  $scope.events = [
+    'club - 1 million people attending this event', 
+    'bar - 80 people attending this event', 
+    'festival - 12,345 people attending this event'];
 
-  $scope.all = function() {
-    Database.all();
+  $scope.showEvent = function() {
+    alert('WOOOOOOO!')
   }
+  
 })

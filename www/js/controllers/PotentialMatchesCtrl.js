@@ -7,6 +7,7 @@ app.controller('PotentialMatchesCtrl', function($scope, $state, Database) {
   ];
 
   $scope.all = function() {
-    Database.all();
+    // Database.all();
+    $state.go('specificMatch');
   }
 })
