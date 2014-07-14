@@ -1,6 +1,6 @@
-app.controller('SignInCtrl', function($scope, $state, $location, Auth) {
+app.controller('SignInCtrl', function($scope, $state) {
   $scope.signIn = function() {
-    $location.path('/auth/facebook');
-    // $state.go('tabs.home');
+    // $location.path('/auth/facebook');
+    $state.go('potentialEvents');
   }
 })

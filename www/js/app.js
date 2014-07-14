@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic']);
 
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -16,6 +16,10 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
+
+  $rootScope.currentUser = {};
+  $rootScope.currentUser.id = 0;
+  $rootScope.currentEvent = {};
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -32,7 +36,7 @@ app.run(function($ionicPlatform) {
     .state('tab', {
       url: '/tab',
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: "../templates/tabs.html"
     })
 
     .state('tab.events', {
@@ -44,7 +48,7 @@ app.run(function($ionicPlatform) {
         }
       }
     })
-
+    
     .state('tab.matches', {
       url: '/matches',
       views: {
@@ -53,6 +57,30 @@ app.run(function($ionicPlatform) {
           controller: 'MatchesCtrl'
         }
       }
+    })
+
+    .state('potentialEvents', {
+      url: '/potentialEvents',
+      templateUrl: "../templates/potentialEvents.html",
+      controller: 'PotentialEventsCtrl'
+    })
+
+    .state('potentialMatches', {
+      url: '/potentialMatches',
+      templateUrl: '../templates/potentialMatches.html',
+      controller: 'PotentialMatchesCtrl'
+    })
+
+    .state('specificMatch', {
+      url: '/specificMatch',
+      templateUrl: '../templates/specificMatch.html',
+      controller: 'SpecificMatchCtrl'
+    })
+
+    .state('specificEvent', {
+      url: '/specificEvent',
+      templateUrl: '../templates/specificEvent.html',
+      controller: 'SpecificEventCtrl'
     })
 
 

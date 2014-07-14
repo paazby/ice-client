@@ -1,0 +1,12 @@
+
+<ion-view title="Potential Matches">
+  <ion-content>
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+      <ion-slide ng-repeat='match in potentialMatches' title="title">
+        <div class="box blue">
+          <img ng-src={{match.pic}} ng-click='like(match.id)'/>
+        </div>
+      </ion-slide ng-repeat-end>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>
