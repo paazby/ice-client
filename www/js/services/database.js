@@ -25,11 +25,13 @@ app.factory('Database', function($http){
       return true;
     },
 
-    matches: function() {
+    matches: function(currentUserId) {
+      // find all rows where user1 === currentUserId && count === 2
+      // OR user2 === currentUserId && count === 2
       return ['george clooney', 'rachel mcadams', 'manu ginobili'];
     },
 
-    events: function() {
+    events: function(currentUserId) {
       return [
         'http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg',
         'http://cdn.onlythebeat.com/wp-content/uploads/2013/03/Paradiso-Wide-OTB1.jpg',
@@ -50,6 +52,23 @@ app.factory('Database', function($http){
         {
           pic: 'http://postgradproblems.s3.amazonaws.com/wp-content/uploads/2014/01/aa19ac627923e9f171a6e379af4c6c36.jpg',
           uid: 3
+        }
+      ];
+    },
+
+    potentialEvents: function() {
+      return [
+        {
+          title: 'club - 1 million people attending this event', 
+          eventId: 0,
+        },
+        {
+          title: 'bar - 80 people attending this event', 
+          eventId: 1,
+        },
+        {
+          title:'festival - 12,345 people attending this event',
+          eventId: 2
         }
       ];
     }

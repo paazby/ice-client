@@ -1,9 +1,6 @@
-app.controller('PotentialEventsCtrl', function($scope, $state, $location) {
+app.controller('PotentialEventsCtrl', function($scope, $state, Database) {
 
-  $scope.events = [
-    'club - 1 million people attending this event', 
-    'bar - 80 people attending this event', 
-    'festival - 12,345 people attending this event'];
+  $scope.events = Database.potentialEvents();
 
   $scope.showEvent = function() {
     alert('WOOOOOOO!')
