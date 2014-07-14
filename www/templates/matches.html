@@ -1,0 +1,10 @@
+
+<ion-view title='Matches'>
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="match in matches" ng-click='showMatch(match)'>
+        {{match}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
