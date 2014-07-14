@@ -1,8 +1,8 @@
 <ion-view title='Potential Events'>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="event in events" ng-click='showEvent()'>
-        {{event.title}}
+      <ion-item ng-repeat="event in events" ng-click='showEvent(event)'>
+        {{event.title + ": " + event.guests + " people attending"}}
       </ion-item>
     </ion-list>
   </ion-content>

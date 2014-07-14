@@ -19,6 +19,7 @@ app.run(function($ionicPlatform, $rootScope) {
 
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
+  $rootScope.currentEvent = {};
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -74,6 +75,12 @@ app.run(function($ionicPlatform, $rootScope) {
       url: '/specificMatch',
       templateUrl: '../templates/specificMatch.html',
       controller: 'SpecificMatchCtrl'
+    })
+
+    .state('specificEvent', {
+      url: '/specificEvent',
+      templateUrl: '../templates/specificEvent.html',
+      controller: 'SpecificEventCtrl'
     })
 
 

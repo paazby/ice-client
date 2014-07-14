@@ -1,9 +1,10 @@
-app.controller('PotentialEventsCtrl', function($scope, $state, Database) {
+app.controller('PotentialEventsCtrl', function($rootScope, $scope, $state, Database) {
 
   $scope.events = Database.potentialEvents();
 
-  $scope.showEvent = function() {
-    alert('WOOOOOOO!')
+  $scope.showEvent = function(eventObj) { // can't use 'event', because it is a key word
+    $rootScope.currentEvent = eventObj;
+    $state.go('specificEvent')
   }
   
 })

@@ -43,15 +43,15 @@ app.factory('Database', function($http){
       return [
         {
           pic: 'http://www.50shadesofage.com/wp-content/uploads/2013/02/George-Clooney-headshot.jpg',
-          uid: 1
+          id: 1
         },
         {
           pic: 'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg',
-          uid: 2
+          id: 2
         },
         {
           pic: 'http://postgradproblems.s3.amazonaws.com/wp-content/uploads/2014/01/aa19ac627923e9f171a6e379af4c6c36.jpg',
-          uid: 3
+          id: 3
         }
       ];
     },
@@ -59,16 +59,19 @@ app.factory('Database', function($http){
     potentialEvents: function() {
       return [
         {
-          title: 'club - 1 million people attending this event', 
-          eventId: 0,
+          title: 'club', 
+          id: 0,
+          guests: 10000
         },
         {
-          title: 'bar - 80 people attending this event', 
-          eventId: 1,
+          title: 'bar', 
+          id: 1,
+          guests: 30
         },
         {
-          title:'festival - 12,345 people attending this event',
-          eventId: 2
+          title:'festival',
+          id: 2,
+          guests: 40
         }
       ];
     }
