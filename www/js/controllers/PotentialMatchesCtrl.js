@@ -1,18 +1,13 @@
-app.controller('PotentialMatchesCtrl', function($scope, $state, $ionicPopup, Database) {
+app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, Database) {
 
-  $scope.potentialMatches = [
-    'http://www.50shadesofage.com/wp-content/uploads/2013/02/George-Clooney-headshot.jpg',
-    'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg',
-    'http://postgradproblems.s3.amazonaws.com/wp-content/uploads/2014/01/aa19ac627923e9f171a6e379af4c6c36.jpg'
-  ];
+  $scope.potentialMatches = Database.potentialMatches();
 
   $scope.sendMessage = function(message) {
     console.log(message); 
   };
 
-  $scope.like = function() {
-    // Database.all();
-    var isMatch = Database.isMatch();
+  $scope.like = function(otherId) {
+    var isMatch = Database.isMatch($rootScope.currentUser.uid, otherId);
 
     if (isMatch) {
       $scope.data = {};
@@ -36,6 +31,8 @@ app.controller('PotentialMatchesCtrl', function($scope, $state, $ionicPopup, Dat
           },
         ]
       });
+
+
     }
   }
 })

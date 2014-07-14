@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic']);
 
-app.run(function($ionicPlatform) {
+app.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -16,6 +16,9 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
+
+  $rootScope.currentUser = {};
+  $rootScope.currentUser.id = 0;
 })
 
 .config(function($stateProvider, $urlRouterProvider) {

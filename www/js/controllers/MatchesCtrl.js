@@ -1,6 +1,6 @@
-app.controller('MatchesCtrl', function($scope, $state) {
+app.controller('MatchesCtrl', function($scope, $state, Database) {
 
-  $scope.matches = ['george', 'clooney'];
+  $scope.matches = Database.matches();
   $scope.showMatch = function(match) {
     console.log(match);
     // $state.go(// page with info about specific match)
