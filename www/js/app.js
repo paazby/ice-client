@@ -23,7 +23,6 @@ app.run(function($ionicPlatform, $rootScope, Database) {
 
   Database.potentialMatches().success(function(data) {
     $rootScope.potentialMatches = data.results;
-    console.log('hey')
   });
 
   Database.potentialEvents().success(function(data) {

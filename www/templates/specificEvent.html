@@ -1,21 +1,8 @@
-<ion-view title=Event Description>
+<ion-view title="Event Info">
   <ion-content >
-    <!-- <div> -->
-      <!-- <figure>
-        <img ng-src={{currentEvent.pic}} ng-click='all()'/>
-        <figcaption>
-          <p>
-            {{currentEvent.description}}
-          </p>
-        </figcaption>
-      </figure>
-      <div class="button-bar">
-        <a class="button icon ion-ios7-people" ng-click="guests()"></a>
-        <a class="button icon ion-heart" ng-click="matches()"></a>
-      </div> -->
-    <!-- </div> -->
     <div class='list card'>
-      <div class="item">
+      <div class="item item-icon-right">
+        <i class='icon ion-fireball'></i>
         <h2>{{currentEvent.title}}</h2>
         <p>December 31, 2014</p>
       </div>
@@ -34,20 +21,19 @@
       </div>
 
       <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" href="#">
-          <i class="icon ion-thumbsup"></i>
-          Like
+        <a class="tab-item" ng-click='guests()'>
+          <i class="icon ion-ios7-people"></i>
+          Attending
         </a>
-        <a class="tab-item" href="#">
-          <i class="icon ion-chatbox"></i>
-          Comment
+        <a class="tab-item" ng-click='matches()'>
+          <i class="icon ion-heart"></i>
+          Matches
         </a>
         <a class="tab-item" href="#">
           <i class="icon ion-share"></i>
           Share
         </a>
       </div>
-
     </div>
   </ion-content>
 </ion-view>

@@ -1,12 +1,27 @@
 
 <ion-view title="Potential Matches">
   <ion-content>
-    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
-      <ion-slide ng-repeat='match in potentialMatches' title="title">
-        <div class="box blue">
-          <img ng-src={{match.pic}} ng-click='like(match.id)'/>
-        </div>
-      </ion-slide ng-repeat-end>
-    </ion-slide-box>
+    <div class="list card">
+
+      <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+        <ion-slide ng-repeat='match in potentialMatches' title="title">
+          <div class="item item-icon-left">
+            <i class='icon ion-fireball'></i>
+            <h2>Name of Match</h2>
+            <p>Some other info</p>
+          </div>
+
+          <div class="item item-image">
+            <img src={{match.pic}}>
+          </div>
+
+          <a class="item item-icon-left assertive" href="#">
+            <i class="icon ion-music-note"></i>
+            Age, and maybe more info
+          </a>
+        </ion-slide ng-repeat-end>
+      </ion-slide-box>
+
+    </div>
   </ion-content>
 </ion-view>

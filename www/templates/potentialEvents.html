@@ -9,16 +9,10 @@
 </ion-header-bar>
 <ion-view title='Potential Events' hide-back-button="true">
   <ion-content class="has-header">
-    <!-- <ion-list>
-      <ion-item ng-repeat="event in potentialEvents" ng-click='showEvent(event)'>
-        {{event.title + ": " + event.guests + " people attending"}}
-      </ion-item>
-    </ion-list> -->
     <div class='list list-inset'>
       <a class="item item-icon-right item-thumbnail-left" ng-repeat="event in potentialEvents" ng-click='showEvent(event)'>
         <img ng-src={{event.pic}}>
         <i class="icon ion-fireball"></i>
-        <!-- {{event.title + ": " + event.guests + " people attending"}} -->
         <h2>{{event.title}}</h2>
         <p>{{event.guests + " people attending"}}</p>
       </a>
