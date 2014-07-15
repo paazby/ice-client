@@ -1,6 +1,13 @@
 app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, Database) {
 
-  $scope.potentialMatches = Database.potentialMatches();
+  // $scope.init = function() {
+  //   Database.potentialMatches().success(function(data) {
+  //     $scope.potentialMatches = data.results;
+  //     console.log('sdfdsf')
+  //   });
+  // };
+
+  // $scope.init();
 
   $scope.sendMessage = function(message) {
     console.log(message); 

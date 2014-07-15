@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic']);
 
-app.run(function($ionicPlatform, $rootScope) {
+app.run(function($ionicPlatform, $rootScope, Database) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,6 +20,11 @@ app.run(function($ionicPlatform, $rootScope) {
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
+
+  Database.potentialMatches().success(function(data) {
+    $rootScope.potentialMatches = data.results;
+    console.log('hey')
+  });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {

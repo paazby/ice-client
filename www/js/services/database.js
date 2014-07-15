@@ -1,19 +1,6 @@
 app.factory('Database', function($http){
   
   var Database = {
-    all: function(){
-      $http({
-        url: 'http://icebreaker-mock.azurewebsites.net/matches', 
-        method: "GET"
-      })
-      .success(function(matches){
-        // do something with matches
-        console.log(matches);
-      })
-      .error(function(error){
-       console.log('Error in Database.all()', error)
-      })
-    },
 
     isMatch: function(currentUserId, otherId) {
       // query database with current userid, and target userid
@@ -40,20 +27,10 @@ app.factory('Database', function($http){
     },
 
     potentialMatches: function() {
-      return [
-        {
-          pic: 'http://www.50shadesofage.com/wp-content/uploads/2013/02/George-Clooney-headshot.jpg',
-          id: 1
-        },
-        {
-          pic: 'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg',
-          id: 2
-        },
-        {
-          pic: 'http://postgradproblems.s3.amazonaws.com/wp-content/uploads/2014/01/aa19ac627923e9f171a6e379af4c6c36.jpg',
-          id: 3
-        }
-      ];
+      return $http({
+        url: 'http://ice-mockserver.azurewebsites.net/matches', 
+        method: "GET"
+      });
     },
 
     potentialEvents: function() {
