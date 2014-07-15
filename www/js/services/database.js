@@ -34,29 +34,10 @@ app.factory('Database', function($http){
     },
 
     potentialEvents: function() {
-      return [
-        {
-          title: 'club', 
-          id: 0,
-          guests: 10000,
-          pic: 'http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg',
-          description: 'no cover tonight'
-        },
-        {
-          title: 'bar', 
-          id: 1,
-          guests: 30,
-          pic: 'http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg',
-          description: 'free alcohol'
-        },
-        {
-          title:'festival',
-          id: 2,
-          guests: 40,
-          pic: 'http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg',
-          description: 'performance by adsfsdfljlkj'
-        }
-      ];
+      return $http({
+        url: 'http://ice-mockserver.azurewebsites.net/potentialEvents', 
+        method: "GET"
+      });
     }
   };
 

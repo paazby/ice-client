@@ -10,7 +10,7 @@
 <ion-view title='Potential Events' hide-back-button="true">
   <ion-content class="has-header">
     <ion-list>
-      <ion-item ng-repeat="event in events" ng-click='showEvent(event)'>
+      <ion-item ng-repeat="event in potentialEvents" ng-click='showEvent(event)'>
         {{event.title + ": " + event.guests + " people attending"}}
       </ion-item>
     </ion-list>

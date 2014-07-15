@@ -25,6 +25,11 @@ app.run(function($ionicPlatform, $rootScope, Database) {
     $rootScope.potentialMatches = data.results;
     console.log('hey')
   });
+
+  Database.potentialEvents().success(function(data) {
+    $rootScope.potentialEvents = data.results;
+    console.log(data);
+  });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
