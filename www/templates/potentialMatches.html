@@ -1,10 +1,10 @@
 
 <ion-view title="Potential Matches">
   <ion-content>
-    <div class="list card">
-
       <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
         <ion-slide ng-repeat='match in potentialMatches' title="title">
+    <div class="list card">
+
           <div class="item item-icon-left">
             <i class='icon ion-fireball'></i>
             <h2>Name of Match</h2>
@@ -19,9 +19,9 @@
             <i class="icon ion-music-note"></i>
             Age, and maybe more info
           </a>
-        </ion-slide ng-repeat-end>
-      </ion-slide-box>
 
     </div>
+        </ion-slide ng-repeat-end>
+      </ion-slide-box>
   </ion-content>
 </ion-view>
