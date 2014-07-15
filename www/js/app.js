@@ -91,6 +91,4 @@ app.run(function($ionicPlatform, $rootScope, Database) {
       templateUrl: '../templates/specificEvent.html',
       controller: 'SpecificEventCtrl'
     })
-
-
 })
