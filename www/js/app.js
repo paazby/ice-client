@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('icebreaker', ['ionic']);
+var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
 app.run(function($ionicPlatform, $rootScope, Database) {
   $ionicPlatform.ready(function() {
@@ -30,6 +30,29 @@ app.run(function($ionicPlatform, $rootScope, Database) {
     console.log(data);
   });
 })
+
+.run(function ($rootScope, $state, $ionicPlatform, $window, OpenFB) {
+
+        OpenFB.init(594149957373416, 'http://localhost:4568/agin/carlton/dustytoken'); // initializes OpenFb module
+
+        $ionicPlatform.ready(function () {
+            if (window.StatusBar) {
+                StatusBar.styleDefault();
+            }
+        });
+
+        $rootScope.$on('$stateChangeStart', function(event, toState) {
+            if (toState.name !== "signin" && toState.name !== "signout" && !$window.sessionStorage['fbtoken']) {
+                $state.go('signin');
+                event.preventDefault();
+            }
+        });
+
+        $rootScope.$on('OAuthException', function() {
+            $state.go('signin');
+        });
+
+    })
 
 .config(function($stateProvider, $urlRouterProvider) {
 
