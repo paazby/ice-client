@@ -1,15 +1,39 @@
-<ion-view title={{currentEvent.title}}>
+<ion-view title="Event Info">
   <ion-content >
-    <!-- <div> -->
-      <figure>
-        <img ng-src={{currentEvent.pic}} ng-click='all()'/>
-        <figcaption>
-          <p>
-            {{currentEvent.description}}
-          </p>
-        </figcaption>
-      </figure>
-    <!-- </div> -->
+    <div class='list card'>
+      <div class="item item-icon-right">
+        <i class='icon ion-fireball'></i>
+        <h2>{{currentEvent.title}}</h2>
+        <p>December 31, 2014</p>
+      </div>
 
+      <div class="item item-body">
+        <img class="full-image" ng-src={{currentEvent.pic}}>
+        <p>
+          This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+          the content is from a card-body consisting of an image and paragraph text. The footer
+          consists of tabs, icons aligned left, within the card-footer.
+        </p>
+        <p>
+          <a href="#" class="subdued">1 Like</a>
+          <a href="#" class="subdued">5 Comments</a>
+        </p>
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" ng-click='guests()'>
+          <i class="icon ion-ios7-people"></i>
+          Attending
+        </a>
+        <a class="tab-item" ng-click='matches()'>
+          <i class="icon ion-heart"></i>
+          Matches
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-share"></i>
+          Share
+        </a>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
