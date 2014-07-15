@@ -14,10 +14,13 @@
         {{event.title + ": " + event.guests + " people attending"}}
       </ion-item>
     </ion-list> -->
-    <div class='list'>
-      <a class="item item-icon-right" ng-repeat="event in potentialEvents" ng-click='showEvent(event)'>
+    <div class='list list-inset'>
+      <a class="item item-icon-right item-thumbnail-left" ng-repeat="event in potentialEvents" ng-click='showEvent(event)'>
+        <img ng-src={{event.pic}}>
         <i class="icon ion-fireball"></i>
-        {{event.title + ": " + event.guests + " people attending"}}
+        <!-- {{event.title + ": " + event.guests + " people attending"}} -->
+        <h2>{{event.title}}</h2>
+        <p>{{event.guests + " people attending"}}</p>
       </a>
     </div>
   </ion-content>
