@@ -1,4 +1,4 @@
-
+<!-- 
 <ion-view title="Potential Matches">
   <ion-content>
       
@@ -14,7 +14,7 @@
           </div>
 
           <div class="item item-image">
-            <img ng-src={{match.pic}}>
+            <img ng-src={{match.pic}} ng-click='no($index)'>
           </div>
 
           <a class="item item-icon-left assertive" href="#">
@@ -29,3 +29,21 @@
 
   </ion-content>
 </ion-view>
+ -->
+ <swipe-cards>
+    <swipe-card ng-repeat="match in potentialMatches" on-destroy="cardDestroyed($index)" on-swipe="cardSwiped($index)">
+
+      <div ng-controller="CardCtrl">
+        <div class="title">
+          {{match.title}}
+        </div>
+        <div class="image">
+          <img ng-src="{{match.pic}}">
+        </div>
+        <div class="button-bar">
+          <button class="button button-clear button-positive" ng-click="goAway()">Like</button>
+          <button class="button button-clear button-positive" ng-click="goAway()">Indifferent</button>
+        </div>
+      </div>
+    </swipe-card>
+</swipe-cards>
