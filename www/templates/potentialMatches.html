@@ -1,11 +1,8 @@
 
 <ion-view title="Potential Matches">
   <ion-content>
-      
-     <!--  <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
-        <ion-slide ng-repeat='match in potentialMatches' title="title">
-         -->
-         <div ng-style="{'z-index': $index, 'top': '0px', 'left': '0px', 'position': 'absolute'}" ng-repeat='match in potentialMatches' class="list card" ng-click='no($index)'>
+
+         <div ng-style="{'z-index': potentialMatches.length - 1 - $index, 'top': '{{$index}}px', 'left': '0px', 'position': 'absolute'}" ng-repeat='match in potentialMatches' class="list card">
 
           <div class="item item-icon-left">
             <i class='icon ion-fireball'></i>
@@ -14,28 +11,21 @@
           </div>
 
           <div class="item item-image" ng-style="{'height': '300px', 'width': '300px'}">
-            <img ng-src={{match.pic}} ng-style="{'max-height': '100%', 'width': 'auto', 'display': 'block', 'margin': 'auto'}">
+            <img ng-src={{match.pic}} ng-click='info()' ng-style="{'max-height': '100%', 'width': 'auto'}">
           </div>
 
           <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" href="#">
+            <a class="tab-item" ng-click='like($index)'>
               <i class="icon ion-heart"></i>
               Like
             </a>
-            <a class="tab-item" href="#">
-              <i class="icon ion-information-circled"></i>
-              Info
-            </a>
-            <a class="tab-item" href="#">
+            <a class="tab-item" ng-click='dislike($index)'>
               <i class="icon ion-heart-broken"></i>
               Dislike
             </a>
           </div>
 
          </div ng-repeat-end>
-
-     <!--  </ion-slide ng-repeat-end>
-    </ion-slide-box> -->
 
   </ion-content>
 </ion-view>
