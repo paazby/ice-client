@@ -9,6 +9,11 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
   // $scope.init();
 
+  $scope.no = function(index) {
+    // $scope.potentialMatches.shift();
+    $scope.potentialMatches.splice(index, 1);
+  };
+
   $scope.sendMessage = function(message) {
     console.log(message); 
   };
