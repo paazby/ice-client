@@ -7,6 +7,12 @@
 
   <ion-content>
 
+      
+     <!--  <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+        <ion-slide ng-repeat='match in potentialMatches' title="title">
+         -->
+         <div ng-style="{'z-index': $index, 'top': '0px', 'left': '0px', 'position': 'absolute'}" ng-repeat='match in potentialMatches' class="list card" ng-click='no($index)'>
+
      <div ng-style="{'z-index': potentialMatches.length - 1 - $index, 'top': '{{$index}}px', 'left': '0px', 'position': 'absolute'}" ng-repeat='match in potentialMatches' class="list card">
 
       <div class="item assertive item-icon-left">
