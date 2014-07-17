@@ -9,6 +9,10 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
   // $scope.init();
 
+  $scope.matches = function() {
+    $state.go('matches');
+  }
+
   $scope.kill = function(index) {
     // this removes the first item from the potentialMatches
     // array. ng-repeat is run again, and everything has a new
