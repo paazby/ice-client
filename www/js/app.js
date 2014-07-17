@@ -5,10 +5,11 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
-app.run(function($ionicPlatform, $rootScope, Database) {
+app.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
@@ -17,42 +18,22 @@ app.run(function($ionicPlatform, $rootScope, Database) {
     }
   });
 
+  $rootScope.$on('$stateChangeStart', function(event, toState) {
+    if (toState.name !== "signin" && !$window.sessionStorage['fbtoken']) {
+      $state.go('signin');
+      event.preventDefault();
+    }
+
+    $rootScope.$on('OAuthException', function() {
+            $state.go('signin');
+        });
+  });
+
+
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
-
-  Database.potentialMatches().success(function(data) {
-    $rootScope.potentialMatches = data.results;
-  });
-
-  Database.potentialEvents().success(function(data) {
-    $rootScope.potentialEvents = data.results;
-    console.log(data);
-  });
 })
-
-.run(function ($rootScope, $state, $ionicPlatform, $window, OpenFB) {
-
-        OpenFB.init(594149957373416, 'http://localhost:4568/agin/carlton/dustytoken'); // initializes OpenFb module
-
-        $ionicPlatform.ready(function () {
-            if (window.StatusBar) {
-                StatusBar.styleDefault();
-            }
-        });
-
-        $rootScope.$on('$stateChangeStart', function(event, toState) {
-            if (toState.name !== "signin" && toState.name !== "signout" && !$window.sessionStorage['fbtoken']) {
-                $state.go('signin');
-                event.preventDefault();
-            }
-        });
-
-        $rootScope.$on('OAuthException', function() {
-            $state.go('signin');
-        });
-
-    })
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -114,4 +95,6 @@ app.run(function($ionicPlatform, $rootScope, Database) {
       templateUrl: '../templates/specificEvent.html',
       controller: 'SpecificEventCtrl'
     })
+
+
 })
