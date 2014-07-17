@@ -57,30 +57,42 @@ app.run(function($ionicPlatform, $rootScope) {
       controller: 'SignInCtrl'
     })
 
-    .state('tab', {
-      url: '/tab',
-      abstract: true,
-      templateUrl: "../templates/tabs.html"
+    // .state('tab', {
+    //   url: '/tab',
+    //   abstract: true,
+    //   templateUrl: "../templates/tabs.html"
+    // })
+
+    // .state('tab.events', {
+    //   url: '/events',
+    //   views: {
+    //     'tab-events': {
+    //       templateUrl: '../templates/events.html',
+    //       controller: 'EventsCtrl'
+    //     }
+    //   }
+    // })
+    
+    // .state('tab.matches', {
+    //   url: '/matches',
+    //   views: {
+    //     'tab-matches': {
+    //       templateUrl: '../templates/matches.html',
+    //       controller: 'MatchesCtrl'
+    //     }
+    //   }
+    // })
+
+    .state('events', {
+      url: '/events',
+      templateUrl: '../templates/events.html',
+      controller: 'EventsCtrl'
     })
 
-    .state('tab.events', {
-      url: '/events',
-      views: {
-        'tab-events': {
-          templateUrl: '../templates/events.html',
-          controller: 'EventsCtrl'
-        }
-      }
-    })
-    
-    .state('tab.matches', {
+    .state('matches', {
       url: '/matches',
-      views: {
-        'tab-matches': {
-          templateUrl: '../templates/matches.html',
-          controller: 'MatchesCtrl'
-        }
-      }
+      templateUrl: '../templates/matches.html',
+      controller: 'MatchesCtrl'
     })
 
     .state('potentialEvents', {

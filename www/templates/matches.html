@@ -10,12 +10,19 @@
 </ion-view>
  -->
 
-<div class="list list-inset">
+ <ion-view title='Matches' hide-back-button='false'>
+   <ion-content class="has-header">
 
-  <a class="item item-avatar" ng-repeat="(id, match) in matches" ng-click="showMatch(id)">
-    <img ng-src="{{match.pic}}">
-    <h2>George Clooney</h2>
-    <!-- <p>{{match.id}}</p> -->
-  </a>
+    <div class="list list-inset">
 
 </div>
+      <a class="item item-avatar" ng-repeat="(id, match) in matches" ng-click="showMatch(id)">
+        <img ng-src="{{match.pic}}">
+        <h2>George Clooney</h2>
+        <!-- <p>{{match.id}}</p> -->
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>
