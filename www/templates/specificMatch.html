@@ -1,5 +1,36 @@
 <ion-view title="Specific Match">
   <ion-content>
-    <img ng-src=event.pic />    
+    
+  <div class="list card">
+
+    <div class="item">
+      <h2>George Clooney</h2>
+      <p>May 6, 1961</p>
+    </div>
+
+    <div class="item item-body">
+      <img class="full-image" src="{{matches[id].pic}}">
+      <p>
+        I am the most handsome man alive.
+      </p>
+    </div>
+
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <a class="tab-item" href="#">
+        <i class="icon ion-thumbsup"></i>
+        Like
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-chatbox"></i>
+        Comment
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-share"></i>
+        Share
+      </a>
+    </div>
+
+  </div>
+
   </ion-content>
 </ion-view>

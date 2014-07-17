@@ -26,13 +26,24 @@ app.run(function($ionicPlatform, $rootScope) {
 
   Database.potentialMatches().success(function(data) {
     $rootScope.potentialMatches = data.results;
-    $rootScope.potentialMatches.concat($rootScope.potentialMatches);
   });
 
 
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
+  Database.potentialEvents().success(function(data) {
+    $rootScope.potentialEvents = data.results;
+    console.log(data);
+  });
+
+  Database.matches($rootScope.currentUser.id).success(function(data) {
+    $rootScope.matches = {};
+    for (var i = 0; i < data.results.length; i++) {
+      var match = data.results[i];
+      $rootScope.matches[match.id] = match;
+    }
+  });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -85,7 +96,7 @@ app.run(function($ionicPlatform, $rootScope) {
     })
 
     .state('specificMatch', {
-      url: '/specificMatch',
+      url: '/specificMatch/:id',
       templateUrl: '../templates/specificMatch.html',
       controller: 'SpecificMatchCtrl'
     })

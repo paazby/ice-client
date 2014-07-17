@@ -55,7 +55,6 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
   $scope.dislike = function(index) {
     $scope.kill(index);
-    console.log('dislike')
   }
 
   $scope.info = function() {

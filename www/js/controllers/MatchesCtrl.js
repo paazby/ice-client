@@ -1,9 +1,9 @@
-app.controller('MatchesCtrl', function($rootScope, $scope, $state, Database) {
+app.controller('MatchesCtrl', function($rootScope, $scope, $state) {
 
-  $scope.matches = Database.matches($rootScope.currentUser.id);
-  $scope.showMatch = function(match) {
-    console.log(match);
+  $scope.showMatch = function(matchId) {
+    console.log(matchId);
     // $state.go(// page with info about specific match)
+    $state.go('specificMatch', {id: matchId});
     // use match.id to pass along specific match page
   }
 })
