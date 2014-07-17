@@ -9,13 +9,10 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
   // $scope.init();
 
-<<<<<<< HEAD
   $scope.matches = function() {
     $state.go('matches');
   }
 
-=======
->>>>>>> potentialMatches: when you have a match, the next picture in the array is
   $scope.kill = function(index) {
     // this removes the first item from the potentialMatches
     // array. ng-repeat is run again, and everything has a new
@@ -26,13 +23,10 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
   };
 
-<<<<<<< HEAD
   $scope.sendMessage = function(message) {
     console.log(message); 
   };
 
-=======
->>>>>>> potentialMatches: when you have a match, the next picture in the array is
   $scope.like = function(index, otherId) {
     var isMatch = Database.isMatch($rootScope.currentUser.uid, otherId);
     if (isMatch) {
@@ -70,10 +64,7 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
   $scope.dislike = function(index) {
     $scope.kill(index);
-<<<<<<< HEAD
-=======
     console.log('dislike')
->>>>>>> potentialMatches: when you have a match, the next picture in the array is
   }
 
   $scope.info = function() {

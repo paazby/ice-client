@@ -28,7 +28,6 @@ app.run(function($ionicPlatform, $rootScope) {
     $rootScope.potentialMatches = data.results;
   });
 
-
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
