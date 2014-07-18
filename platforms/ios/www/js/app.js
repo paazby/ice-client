@@ -5,7 +5,6 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
-
 app.run(function($ionicPlatform, $rootScope, Database) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -103,7 +102,6 @@ app.run(function($ionicPlatform, $rootScope, Database) {
 
     .state('potentialEvents', {
       url: '/potentialEvents',
-
       templateUrl: "templates/potentialEvents.html",
       controller: 'PotentialEventsCtrl'
     })
@@ -115,7 +113,6 @@ app.run(function($ionicPlatform, $rootScope, Database) {
     })
 
     .state('specificMatch', {
-
       url: '/specificMatch/:id',
       templateUrl: 'templates/specificMatch.html',
       controller: 'SpecificMatchCtrl'
@@ -123,7 +120,6 @@ app.run(function($ionicPlatform, $rootScope, Database) {
 
     .state('specificEvent', {
       url: '/specificEvent',
-
       templateUrl: 'templates/specificEvent.html',
       controller: 'SpecificEventCtrl'
     })

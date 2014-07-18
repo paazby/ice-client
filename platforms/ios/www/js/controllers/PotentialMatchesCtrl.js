@@ -66,6 +66,7 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
     // 
   }
 
+
   $scope.sendMessage = function(message) {
     console.log(message); 
   };
