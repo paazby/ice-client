@@ -1,0 +1,41 @@
+
+<ion-view title="Potential Matches">
+
+  <ion-nav-buttons side='right'>
+    <a class="button button-icon icon ion-heart" ng-click='matches()'></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+
+     <div ng-style="{'z-index': potentialMatches.length - 1 - $index, 'top': '{{$index}}px', 'left': '0px', 'position': 'absolute'}" ng-repeat='match in potentialMatches' class="list card">
+
+      <div class="item assertive item-icon-left">
+        <i class='icon ion-fireball'></i>
+        <h2>Name of Match</h2>
+        <p>Some other info, like age</p>
+      </div>
+
+      <div class="item item-image" ng-style="{'height': '300px', 'width': '300px'}">
+        <img ng-src={{match.pic}} ng-click='info()' ng-style="{'max-height': '100%', 'width': 'auto'}">
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item assertive" ng-click='like($index)'>
+          <i class="icon ion-heart"></i>
+          Like
+        </a>
+        <a class="tab-item royal" ng-click='dislike($index)'>
+          <i class="icon ion-heart-broken"></i>
+          Dislike
+        </a>
+      </div>
+
+      <!-- <div class="item button-bar">
+        <a class="button icon ion-heart button-assertive" ng-click='like()'></a>
+        <a class="button icon ion-heart-broken button-royal" ng-click='dislike()'></a>
+      </div> -->
+
+     </div ng-repeat-end>
+
+  </ion-content>
+</ion-view>

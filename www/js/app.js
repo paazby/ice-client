@@ -53,7 +53,7 @@ app.run(function($ionicPlatform, $rootScope) {
   $stateProvider
     .state('signin', {
       url: '/sign-in',
-      templateUrl: '../templates/sign-in.html',
+      templateUrl: 'templates/sign-in.html',
       controller: 'SignInCtrl'
     })
 
