@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
-app.run(function($ionicPlatform, $rootScope, $window, Database, $state) {
+app.run(function($ionicPlatform, $rootScope, Database, $window, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -24,6 +24,7 @@ app.run(function($ionicPlatform, $rootScope, $window, Database, $state) {
   //     event.preventDefault();
   //   }
   // });
+
 
   Database.potentialMatches().success(function(data) {
     $rootScope.potentialMatches = data.results;
@@ -56,32 +57,6 @@ app.run(function($ionicPlatform, $rootScope, $window, Database, $state) {
       templateUrl: 'templates/sign-in.html',
       controller: 'SignInCtrl'
     })
-
-    // .state('tab', {
-    //   url: '/tab',
-    //   abstract: true,
-    //   templateUrl: "../templates/tabs.html"
-    // })
-
-    // .state('tab.events', {
-    //   url: '/events',
-    //   views: {
-    //     'tab-events': {
-    //       templateUrl: '../templates/events.html',
-    //       controller: 'EventsCtrl'
-    //     }
-    //   }
-    // })
-    
-    // .state('tab.matches', {
-    //   url: '/matches',
-    //   views: {
-    //     'tab-matches': {
-    //       templateUrl: '../templates/matches.html',
-    //       controller: 'MatchesCtrl'
-    //     }
-    //   }
-    // })
 
     .state('events', {
       url: '/events',
@@ -117,8 +92,5 @@ app.run(function($ionicPlatform, $rootScope, $window, Database, $state) {
       url: '/specificEvent',
       templateUrl: 'templates/specificEvent.html',
       controller: 'SpecificEventCtrl'
-    })
-
-
-})
-
+    });
+  });

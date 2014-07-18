@@ -64,7 +64,7 @@ angular.module('openfb', [])
                 var url = event.url;
                 console.log(url);
             });
-
+            console.log(loginWindow.location.href);
             loginWindow.addEventListener('exit', function () {
               // Handle the situation where the user closes the login window manually before completing the login process
               deferredLogin.reject({error: 'user_cancelled', error_description: 'User cancelled login process', error_reason: "user_cancelled"});
@@ -74,6 +74,7 @@ angular.module('openfb', [])
              loginWindow.addEventListener('loadstart', function (event) {
               var url = event.url;
               console.log(url);
+
               if (url.indexOf("access_token=") > 0 || url.indexOf("error=") > 0) {
                 loginWindow.close();
                 oauthCallback(url);
@@ -112,7 +113,6 @@ angular.module('openfb', [])
                 deferredLogin.reject();
             }
         }
-
         /**
          * Application-level logout: we simply discard the token.
          */

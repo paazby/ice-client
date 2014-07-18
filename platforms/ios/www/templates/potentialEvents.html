@@ -1,5 +1,3 @@
-<ion-header-bar align-title="center" class="bar-positive">
-
 <!-- <ion-header-bar align-title="center" class="bar-positive">
   <div class="buttons">
     <button class="button" ng-click="doSomething()">Left Button</button>
@@ -8,14 +6,12 @@
   <div class="buttons">
     <button class="button">Right Button</button>
   </div>
-
 </ion-header-bar> -->
 
 <ion-view title='Potential Events' hide-back-button="true">
   <ion-content class="has-header">
 
     <div class='list list-inset'>
-
       <a class="item item-icon-right assertive item-thumbnail-left" ng-repeat="event in potentialEvents" ng-click='showEvent(event)'>
         <img ng-src={{event.pic}}>
         <i class="icon ion-fireball"></i>

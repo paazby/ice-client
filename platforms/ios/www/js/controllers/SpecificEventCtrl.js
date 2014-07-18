@@ -4,7 +4,7 @@ app.controller('SpecificEventCtrl', function($rootScope, $scope, $state, Databas
 
   $scope.guests = function() {
     $state.go('potentialMatches');
-
+  };
 
   $scope.matches = function() {
     $state.go('matches');
