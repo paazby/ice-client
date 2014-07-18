@@ -1,6 +1,5 @@
-app.controller('SignInCtrl', function($scope, $state, $location, Auth) {
-  $scope.signIn = function() {
-    // $location.path('/auth/facebook');
-    $state.go('authFacebook');
-  }
-})
+app.controller('SignInCtrl', function($scope, $location, OpenFB) {
+  $scope.signIn = function () {
+    OpenFB.login()
+        };
+});
