@@ -2,10 +2,10 @@ angular.module('openfb', [])
 
   .factory('OpenFB', function ($rootScope, $q, $window, $http) {
 
-        var FB_LOGIN_URL = 'http://zavadil7.cloudapp.net/auth/facebook';
+        var FB_LOGIN_URL = 'http://dev-ice.cloudapp.net/auth/facebook';
         // By default we store fbtoken in sessionStorage. This can be overriden in init()
         var tokenStore = window.sessionStorage;
-        var oauthRedirectURL = 'http://zavadil7.cloudapp.net/linden/passman/dustytoken';
+        var oauthRedirectURL = 'http://dev-ice.cloudapp.net/linden/passman/dustytoken';
         // Because the OAuth login spans multiple processes, we need to keep the success/error handlers as variables
         // inside the module instead of keeping them local within the login function.
         var deferredLogin;
@@ -53,7 +53,7 @@ angular.module('openfb', [])
             console.log('running in cordova');
             loginWindow.addEventListener('loadstart', function (event) {
               var url = event.url;
-              alert('url');
+              console.log('url');
               if (url.indexOf("access_token=") > 0 || url.indexOf("error=") > 0) {
                 loginWindow.close();
                 oauthCallback(url);
@@ -74,7 +74,6 @@ angular.module('openfb', [])
              loginWindow.addEventListener('loadstart', function (event) {
               var url = event.url;
               console.log(url);
-              alert('url');
               if (url.indexOf("access_token=") > 0 || url.indexOf("error=") > 0) {
                 loginWindow.close();
                 oauthCallback(url);

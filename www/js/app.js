@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('icebreaker', ['ionic']);
+var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
-app.run(function($ionicPlatform, $rootScope) {
+app.run(function($ionicPlatform, $rootScope, $window, Database, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,11 +18,12 @@ app.run(function($ionicPlatform, $rootScope) {
     }
   });
 
-  $rootScope.$on('$stateChangeStart', function(event, toState) {
-    if (toState.name !== "signin" && !$window.sessionStorage['fbtoken']) {
-      $state.go('signin');
-      event.preventDefault();
-    }
+  // $rootScope.$on('$stateChangeStart', function(event, toState) {
+  //   if (toState.name !== "signin" && !$window.sessionStorage['fbtoken']) {
+  //     $state.go('signin');
+  //     event.preventDefault();
+  //   }
+  // });
 
   Database.potentialMatches().success(function(data) {
     $rootScope.potentialMatches = data.results;
