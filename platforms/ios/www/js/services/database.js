@@ -15,7 +15,11 @@ app.factory('Database', function($http){
     matches: function(currentUserId) {
       // find all rows where user1 === currentUserId && count === 2
       // OR user2 === currentUserId && count === 2
-      return ['george clooney', 'rachel mcadams', 'manu ginobili'];
+
+      return $http({
+        url: 'http://ice-mockserver.azurewebsites.net/matches', 
+        method: "GET"
+      });
     },
 
     events: function(currentUserId) {

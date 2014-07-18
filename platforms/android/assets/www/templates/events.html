@@ -1,0 +1,12 @@
+
+<ion-view title="Events">
+  <ion-content >
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+      <ion-slide ng-repeat='event in events' title="title">
+        <div class="box">
+          <img ng-src={{event}} ng-click='all()'/>
+        </div>
+      </ion-slide ng-repeat-end>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

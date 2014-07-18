@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('icebreaker', ['ionic', 'openfb']);
+var app = angular.module('icebreaker', ['ionic']);
 
 app.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
@@ -24,15 +24,25 @@ app.run(function($ionicPlatform, $rootScope) {
       event.preventDefault();
     }
 
-    $rootScope.$on('OAuthException', function() {
-            $state.go('signin');
-        });
+  Database.potentialMatches().success(function(data) {
+    $rootScope.potentialMatches = data.results;
   });
-
 
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
+  Database.potentialEvents().success(function(data) {
+    $rootScope.potentialEvents = data.results;
+    console.log(data);
+  });
+
+  Database.matches($rootScope.currentUser.id).success(function(data) {
+    $rootScope.matches = {};
+    for (var i = 0; i < data.results.length; i++) {
+      var match = data.results[i];
+      $rootScope.matches[match.id] = match;
+    }
+  });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -42,59 +52,72 @@ app.run(function($ionicPlatform, $rootScope) {
   $stateProvider
     .state('signin', {
       url: '/sign-in',
-      templateUrl: '../templates/sign-in.html',
+      templateUrl: 'templates/sign-in.html',
       controller: 'SignInCtrl'
     })
 
-    .state('tab', {
-      url: '/tab',
-      abstract: true,
-      templateUrl: "../templates/tabs.html"
+    // .state('tab', {
+    //   url: '/tab',
+    //   abstract: true,
+    //   templateUrl: "../templates/tabs.html"
+    // })
+
+    // .state('tab.events', {
+    //   url: '/events',
+    //   views: {
+    //     'tab-events': {
+    //       templateUrl: '../templates/events.html',
+    //       controller: 'EventsCtrl'
+    //     }
+    //   }
+    // })
+    
+    // .state('tab.matches', {
+    //   url: '/matches',
+    //   views: {
+    //     'tab-matches': {
+    //       templateUrl: '../templates/matches.html',
+    //       controller: 'MatchesCtrl'
+    //     }
+    //   }
+    // })
+
+    .state('events', {
+      url: '/events',
+      templateUrl: 'templates/events.html',
+      controller: 'EventsCtrl'
     })
 
-    .state('tab.events', {
-      url: '/events',
-      views: {
-        'tab-events': {
-          templateUrl: '../templates/events.html',
-          controller: 'EventsCtrl'
-        }
-      }
-    })
-    
-    .state('tab.matches', {
+    .state('matches', {
       url: '/matches',
-      views: {
-        'tab-matches': {
-          templateUrl: '../templates/matches.html',
-          controller: 'MatchesCtrl'
-        }
-      }
+      templateUrl: 'templates/matches.html',
+      controller: 'MatchesCtrl'
     })
 
     .state('potentialEvents', {
       url: '/potentialEvents',
-      templateUrl: "../templates/potentialEvents.html",
+      templateUrl: "templates/potentialEvents.html",
       controller: 'PotentialEventsCtrl'
     })
 
     .state('potentialMatches', {
       url: '/potentialMatches',
-      templateUrl: '../templates/potentialMatches.html',
+      templateUrl: 'templates/potentialMatches.html',
       controller: 'PotentialMatchesCtrl'
     })
 
     .state('specificMatch', {
-      url: '/specificMatch',
-      templateUrl: '../templates/specificMatch.html',
+      url: '/specificMatch/:id',
+      templateUrl: 'templates/specificMatch.html',
       controller: 'SpecificMatchCtrl'
     })
 
     .state('specificEvent', {
       url: '/specificEvent',
-      templateUrl: '../templates/specificEvent.html',
+      templateUrl: 'templates/specificEvent.html',
       controller: 'SpecificEventCtrl'
     })
 
 
 })
+

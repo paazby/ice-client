@@ -7,3 +7,102 @@
 2014-07-10 11:40:55.939 HelloCordova[2891:70b] Resetting plugins due to page load.
 2014-07-10 11:40:59.320 HelloCordova[2891:70b] Finished load of: file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/index.html
 2014-07-10 11:40:59.616 HelloCordova[2891:70b] THREAD WARNING: ['Device'] took '41.809082' ms. Plugin should use a background thread.
+2014-07-17 17:06:39.815 HelloCordova[2845:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-17 17:06:39.920 HelloCordova[2845:70b] Unlimited access to network resources
+2014-07-17 17:06:44.140 HelloCordova[2845:70b] [CDVTimer][keyboard] 0.136971ms
+2014-07-17 17:06:44.141 HelloCordova[2845:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-17 17:06:44.142 HelloCordova[2845:70b] [CDVTimer][statusbar] 0.573039ms
+2014-07-17 17:06:44.142 HelloCordova[2845:70b] [CDVTimer][TotalPluginStartup] 2.002001ms
+2014-07-17 17:06:44.634 HelloCordova[2845:70b] Resetting plugins due to page load.
+2014-07-17 17:06:45.762 HelloCordova[2845:70b] Finished load of: file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/index.html#/sign-in
+2014-07-17 17:06:45.924 HelloCordova[2845:70b] {"results":[{"title":"club","id":0,"guests":10000,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"no cover tonight"},{"title":"bar","id":1,"guests":30,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"free alcohol"},{"title":"festival","id":2,"guests":40,"pic":"http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg","description":"performance by adsfsdfljlkj"}]}
+2014-07-17 17:08:01.281 HelloCordova[3097:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-17 17:08:01.291 HelloCordova[3097:70b] Unlimited access to network resources
+2014-07-17 17:08:01.313 HelloCordova[3097:70b] [CDVTimer][keyboard] 0.093997ms
+2014-07-17 17:08:01.314 HelloCordova[3097:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-17 17:08:01.314 HelloCordova[3097:70b] [CDVTimer][statusbar] 0.478983ms
+2014-07-17 17:08:01.314 HelloCordova[3097:70b] [CDVTimer][TotalPluginStartup] 1.580000ms
+2014-07-17 17:08:01.528 HelloCordova[3097:70b] Resetting plugins due to page load.
+2014-07-17 17:08:02.280 HelloCordova[3097:70b] Finished load of: file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/index.html#/sign-in
+2014-07-17 17:08:02.572 HelloCordova[3097:70b] {"results":[{"title":"club","id":0,"guests":10000,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"no cover tonight"},{"title":"bar","id":1,"guests":30,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"free alcohol"},{"title":"festival","id":2,"guests":40,"pic":"http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg","description":"performance by adsfsdfljlkj"}]}
+Terminating in response to SpringBoard's termination.
+2014-07-17 17:09:01.553 HelloCordova[3529:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-17 17:09:01.565 HelloCordova[3529:70b] Unlimited access to network resources
+2014-07-17 17:09:01.607 HelloCordova[3529:70b] [CDVTimer][keyboard] 0.097036ms
+2014-07-17 17:09:01.608 HelloCordova[3529:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-17 17:09:01.609 HelloCordova[3529:70b] [CDVTimer][statusbar] 0.508010ms
+2014-07-17 17:09:01.609 HelloCordova[3529:70b] [CDVTimer][TotalPluginStartup] 1.702011ms
+2014-07-17 17:09:01.784 HelloCordova[3529:70b] Resetting plugins due to page load.
+2014-07-17 17:09:02.496 HelloCordova[3529:70b] Finished load of: file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/index.html#/sign-in
+2014-07-17 17:09:02.617 HelloCordova[3529:70b] {"results":[{"title":"club","id":0,"guests":10000,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"no cover tonight"},{"title":"bar","id":1,"guests":30,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"free alcohol"},{"title":"festival","id":2,"guests":40,"pic":"http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg","description":"performance by adsfsdfljlkj"}]}
+2014-07-17 17:10:31.690 HelloCordova[3971:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-17 17:10:31.703 HelloCordova[3971:70b] Unlimited access to network resources
+2014-07-17 17:10:31.747 HelloCordova[3971:70b] [CDVTimer][keyboard] 0.101030ms
+2014-07-17 17:10:31.748 HelloCordova[3971:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-17 17:10:31.748 HelloCordova[3971:70b] [CDVTimer][statusbar] 0.478029ms
+2014-07-17 17:10:31.749 HelloCordova[3971:70b] [CDVTimer][TotalPluginStartup] 1.591980ms
+2014-07-17 17:10:31.911 HelloCordova[3971:70b] Resetting plugins due to page load.
+2014-07-17 17:10:32.299 HelloCordova[3971:70b] Finished load of: file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/index.html#/sign-in
+2014-07-17 17:10:32.405 HelloCordova[3971:70b] {"results":[{"title":"club","id":0,"guests":10000,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"no cover tonight"},{"title":"bar","id":1,"guests":30,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"free alcohol"},{"title":"festival","id":2,"guests":40,"pic":"http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg","description":"performance by adsfsdfljlkj"}]}
+2014-07-17 17:11:32.128 HelloCordova[4400:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-17 17:11:32.138 HelloCordova[4400:70b] Unlimited access to network resources
+2014-07-17 17:11:32.216 HelloCordova[4400:70b] [CDVTimer][keyboard] 0.181019ms
+2014-07-17 17:11:32.217 HelloCordova[4400:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-17 17:11:32.217 HelloCordova[4400:70b] [CDVTimer][statusbar] 0.492036ms
+2014-07-17 17:11:32.218 HelloCordova[4400:70b] [CDVTimer][TotalPluginStartup] 1.686990ms
+2014-07-17 17:11:32.371 HelloCordova[4400:70b] Resetting plugins due to page load.
+2014-07-17 17:11:32.966 HelloCordova[4400:70b] Finished load of: file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/index.html#/sign-in
+2014-07-17 17:11:33.294 HelloCordova[4400:70b] {"results":[{"title":"club","id":0,"guests":10000,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"no cover tonight"},{"title":"bar","id":1,"guests":30,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"free alcohol"},{"title":"festival","id":2,"guests":40,"pic":"http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg","description":"performance by adsfsdfljlkj"}]}
+2014-07-17 17:12:39.916 HelloCordova[4835:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-17 17:12:39.926 HelloCordova[4835:70b] Unlimited access to network resources
+2014-07-17 17:12:39.954 HelloCordova[4835:70b] [CDVTimer][keyboard] 0.099957ms
+2014-07-17 17:12:39.955 HelloCordova[4835:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-17 17:12:39.955 HelloCordova[4835:70b] [CDVTimer][statusbar] 0.483036ms
+2014-07-17 17:12:39.956 HelloCordova[4835:70b] [CDVTimer][TotalPluginStartup] 1.612008ms
+2014-07-17 17:12:40.095 HelloCordova[4835:70b] Resetting plugins due to page load.
+2014-07-17 17:12:40.917 HelloCordova[4835:70b] Finished load of: file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/index.html#/sign-in
+2014-07-17 17:12:41.068 HelloCordova[4835:70b] {"results":[{"title":"club","id":0,"guests":10000,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"no cover tonight"},{"title":"bar","id":1,"guests":30,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"free alcohol"},{"title":"festival","id":2,"guests":40,"pic":"http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg","description":"performance by adsfsdfljlkj"}]}
+2014-07-17 17:12:53.925 HelloCordova[4835:70b] 0
+2014-07-17 17:12:57.951 HelloCordova[4835:70b] ERROR: Error: 'undefined' is not an object (evaluating '$scope.modal.show')
+openModal@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/js/controllers/SpecificMatchCtrl.js:14:17
+file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:19654:26
+file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:42758:21
+$eval@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:21516:28
+$apply@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:21614:28
+file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:42757:19
+file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:11808:14
+forEach@[native code]
+forEach@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:9318:18
+eventHandler@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:11807:12
+dispatchEvent@[native code]
+triggerMouseEvent@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:2726:20
+tapClick@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:2715:20
+tapTouchEnd@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:2833:13
+2014-07-17 17:13:00.893 HelloCordova[4835:70b] ERROR: Error: 'undefined' is not an object (evaluating '$scope.modal.show')
+openModal@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/js/controllers/SpecificMatchCtrl.js:14:17
+file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:19654:26
+file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:42758:21
+$eval@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:21516:28
+$apply@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:21614:28
+file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:42757:19
+file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:11808:14
+forEach@[native code]
+forEach@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:9318:18
+eventHandler@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:11807:12
+dispatchEvent@[native code]
+triggerMouseEvent@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:2726:20
+tapClick@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:2715:20
+tapTouchEnd@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/lib/ionic/js/ionic.bundle.js:2833:13
+2014-07-17 17:13:37.303 HelloCordova[5258:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-17 17:13:37.313 HelloCordova[5258:70b] Unlimited access to network resources
+2014-07-17 17:13:37.366 HelloCordova[5258:70b] [CDVTimer][keyboard] 0.093997ms
+2014-07-17 17:13:37.367 HelloCordova[5258:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-17 17:13:37.368 HelloCordova[5258:70b] [CDVTimer][statusbar] 0.885963ms
+2014-07-17 17:13:37.368 HelloCordova[5258:70b] [CDVTimer][TotalPluginStartup] 2.981007ms
+2014-07-17 17:13:37.555 HelloCordova[5258:70b] Resetting plugins due to page load.
+2014-07-17 17:13:38.423 HelloCordova[5258:70b] Finished load of: file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/index.html#/sign-in
+2014-07-17 17:13:38.634 HelloCordova[5258:70b] {"results":[{"title":"club","id":0,"guests":10000,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"no cover tonight"},{"title":"bar","id":1,"guests":30,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"free alcohol"},{"title":"festival","id":2,"guests":40,"pic":"http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg","description":"performance by adsfsdfljlkj"}]}
+2014-07-17 17:13:45.930 HelloCordova[5258:70b] 0
+2014-07-17 17:16:54.952 HelloCordova[5258:70b] Wassup young niggy, we gone dance at this thing or nah?
+2014-07-17 17:17:16.211 HelloCordova[5258:70b] 0
+Terminating in response to SpringBoard's termination.
