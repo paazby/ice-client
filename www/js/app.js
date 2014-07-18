@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('icebreaker', ['ionic']);
+var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
-app.run(function($ionicPlatform, $rootScope) {
+app.run(function($ionicPlatform, $rootScope, Database, $window, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -23,6 +23,7 @@ app.run(function($ionicPlatform, $rootScope) {
       $state.go('signin');
       event.preventDefault();
     }
+  });
 
   Database.potentialMatches().success(function(data) {
     $rootScope.potentialMatches = data.results;
@@ -55,32 +56,6 @@ app.run(function($ionicPlatform, $rootScope) {
       templateUrl: 'templates/sign-in.html',
       controller: 'SignInCtrl'
     })
-
-    // .state('tab', {
-    //   url: '/tab',
-    //   abstract: true,
-    //   templateUrl: "../templates/tabs.html"
-    // })
-
-    // .state('tab.events', {
-    //   url: '/events',
-    //   views: {
-    //     'tab-events': {
-    //       templateUrl: '../templates/events.html',
-    //       controller: 'EventsCtrl'
-    //     }
-    //   }
-    // })
-    
-    // .state('tab.matches', {
-    //   url: '/matches',
-    //   views: {
-    //     'tab-matches': {
-    //       templateUrl: '../templates/matches.html',
-    //       controller: 'MatchesCtrl'
-    //     }
-    //   }
-    // })
 
     .state('events', {
       url: '/events',
@@ -116,8 +91,5 @@ app.run(function($ionicPlatform, $rootScope) {
       url: '/specificEvent',
       templateUrl: 'templates/specificEvent.html',
       controller: 'SpecificEventCtrl'
-    })
-
-
-})
-
+    });
+  });
