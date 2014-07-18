@@ -85,37 +85,37 @@ app.run(function($ionicPlatform, $rootScope) {
 
     .state('events', {
       url: '/events',
-      templateUrl: '../templates/events.html',
+      templateUrl: 'templates/events.html',
       controller: 'EventsCtrl'
     })
 
     .state('matches', {
       url: '/matches',
-      templateUrl: '../templates/matches.html',
+      templateUrl: 'templates/matches.html',
       controller: 'MatchesCtrl'
     })
 
     .state('potentialEvents', {
       url: '/potentialEvents',
-      templateUrl: "../templates/potentialEvents.html",
+      templateUrl: "templates/potentialEvents.html",
       controller: 'PotentialEventsCtrl'
     })
 
     .state('potentialMatches', {
       url: '/potentialMatches',
-      templateUrl: '../templates/potentialMatches.html',
+      templateUrl: 'templates/potentialMatches.html',
       controller: 'PotentialMatchesCtrl'
     })
 
     .state('specificMatch', {
       url: '/specificMatch/:id',
-      templateUrl: '../templates/specificMatch.html',
+      templateUrl: 'templates/specificMatch.html',
       controller: 'SpecificMatchCtrl'
     })
 
     .state('specificEvent', {
       url: '/specificEvent',
-      templateUrl: '../templates/specificEvent.html',
+      templateUrl: 'templates/specificEvent.html',
       controller: 'SpecificEventCtrl'
     })
 

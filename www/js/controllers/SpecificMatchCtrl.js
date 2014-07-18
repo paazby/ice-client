@@ -2,7 +2,7 @@ app.controller('SpecificMatchCtrl', function($scope, $state, $stateParams, $ioni
 
   $scope.id = $stateParams.id;
 
-  $ionicModal.fromTemplateUrl('../templates/chat.html', {
+  $ionicModal.fromTemplateUrl('templates/chat.html', {
     scope: $scope,
     animation: 'slide-in-up'
   })

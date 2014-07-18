@@ -1,13 +1,19 @@
 /* Empty. Add your own CSS if you like */
-.box {
-  height: 100vh; /* idk if this is compatible with mobile cuz it's weird*/
+
+/*.box {
+  height: 100vh;  idk if this is compatible with mobile cuz it's weird
+>>>>>>> started work on socket io
 }
 
 .blue {
   background-color: blue;
+<<<<<<< HEAD
 }
 
 img {
   max-width: 100%;
   max-height: 100%;
 }
+=======
+}*/
+>>>>>>> started work on socket io
