@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
-app.run(function($ionicPlatform, $rootScope, Database, $window, $state) {
+app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -33,9 +33,9 @@ app.run(function($ionicPlatform, $rootScope, Database, $window, $state) {
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
-  Database.potentialEvents().success(function(data) {
-    $rootScope.potentialEvents = data.results;
-    console.log(data);
+  Events.getEvents().then(function(results) {
+    $rootScope.potentialEvents = results.data.events;
+    console.log($rootScope.potentialEvents)
   });
 
   Database.matches($rootScope.currentUser.id).success(function(data) {
