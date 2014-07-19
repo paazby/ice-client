@@ -51,9 +51,9 @@
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/js/controllers/SignInCtrl.js \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/js/controllers/SpecificEventCtrl.js \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/js/controllers/SpecificMatchCtrl.js \
-/Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/js/services/auth.js \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/js/services/database.js \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/js/services/icebreakerSwipe.js \
+/Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/js/services/oAuth.js \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/lib/angular \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/lib/angular-animate \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/lib/angular-sanitize \
@@ -158,8 +158,10 @@
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/plugins/com.ionic.keyboard/www/keyboard.js \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
+/Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/templates/chat.html \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/templates/events.html \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/templates/matches.html \
+/Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/templates/oauth.html \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/templates/potentialEvents.html \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/templates/potentialMatches.html \
 /Users/Paul/Desktop/Icebreaker/icebreakerClient/platforms/android/assets/www/templates/sign-in.html \

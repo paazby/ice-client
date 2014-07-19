@@ -20,6 +20,11 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
     // I guess the whole view is re-rendered, instead of just removing
     // one node in the DOM
     $scope.potentialMatches.splice(index, 1);
+
+  };
+
+  $scope.sendMessage = function(message) {
+    console.log(message); 
   };
 
   $scope.like = function(index, otherId) {
@@ -59,13 +64,13 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
   $scope.dislike = function(index) {
     $scope.kill(index);
+    console.log('dislike')
   }
 
   $scope.info = function() {
     // this should redirect you to a person's profile
     // 
   }
-
 
   $scope.sendMessage = function(message) {
     console.log(message); 

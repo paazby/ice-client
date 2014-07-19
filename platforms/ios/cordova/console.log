@@ -106,3 +106,20 @@ tapTouchEnd@file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/
 2014-07-17 17:16:54.952 HelloCordova[5258:70b] Wassup young niggy, we gone dance at this thing or nah?
 2014-07-17 17:17:16.211 HelloCordova[5258:70b] 0
 Terminating in response to SpringBoard's termination.
+2014-07-17 21:16:45.444 HelloCordova[38079:70b] Multi-tasking -> Device: YES, App: YES
+2014-07-17 21:16:45.840 HelloCordova[38079:70b] Unlimited access to network resources
+2014-07-17 21:16:48.143 HelloCordova[38079:70b] [CDVTimer][keyboard] 0.102043ms
+2014-07-17 21:16:48.144 HelloCordova[38079:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-07-17 21:16:48.144 HelloCordova[38079:70b] [CDVTimer][statusbar] 0.869036ms
+2014-07-17 21:16:48.145 HelloCordova[38079:70b] [CDVTimer][TotalPluginStartup] 2.005994ms
+2014-07-17 21:16:48.817 HelloCordova[38079:70b] Resetting plugins due to page load.
+2014-07-17 21:16:50.310 HelloCordova[38079:70b] Finished load of: file:///Users/Paul/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/F25BA4B2-72DB-4F71-BFD5-3B9AB5B901D4/HelloCordova.app/www/index.html#/sign-in
+2014-07-17 21:16:50.493 HelloCordova[38079:70b] {"results":[{"title":"club","id":0,"guests":10000,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"no cover tonight"},{"title":"bar","id":1,"guests":30,"pic":"http://web-images.chacha.com/images/Gallery/5314/what-shouldn-t-you-do-in-a-nightclub-1965244927-dec-14-2012-1-600x400.jpg","description":"free alcohol"},{"title":"festival","id":2,"guests":40,"pic":"http://tbscene.com/wp-content/uploads/2014/04/super-bar-milano-2013.jpg","description":"performance by adsfsdfljlkj"}]}
+2014-07-17 21:16:55.182 HelloCordova[38079:70b] THREAD WARNING: ['InAppBrowser'] took '331.666016' ms. Plugin should use a background thread.
+2014-07-17 21:16:55.230 HelloCordova[38079:70b] running in cordova
+2014-07-17 21:17:28.572 HelloCordova[38079:70b] https://m.facebook.com/login.php?skip_api_login=1&api_key=1510972169114459&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv2.0%2Fdialog%2Foauth%3Fredirect_uri%3Dhttp%253A%252F%252Fzavadil7.cloudapp.net%252Fauth%252Ffacebook%252Fcallback%26response_type%3Dcode%26client_id%3D1510972169114459%26ret%3Dlogin&cancel_uri=http%3A%2F%2Fzavadil7.cloudapp.net%2Fauth%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&_rdr
+2014-07-17 21:17:28.606 HelloCordova[38079:70b] THREAD WARNING: ['Console'] took '33.547119' ms. Plugin should use a background thread.
+2014-07-17 21:17:33.960 HelloCordova[38079:70b] https://m.facebook.com/login.php?skip_api_login=1&api_key=1510972169114459&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv2.0%2Fdialog%2Foauth%3Fredirect_uri%3Dhttp%253A%252F%252Fzavadil7.cloudapp.net%252Fauth%252Ffacebook%252Fcallback%26response_type%3Dcode%26client_id%3D1510972169114459%26ret%3Dlogin&cancel_uri=http%3A%2F%2Fzavadil7.cloudapp.net%2Fauth%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&_rdr
+2014-07-17 21:18:07.014 HelloCordova[38079:70b] webView:didFailLoadWithError - -999: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-07-17 21:18:16.313 HelloCordova[38079:70b] http://zavadil7.cloudapp.net/linden/passman/dustytoken/?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.e30.gyb2ND66R1R3dbPykLRH8Eh-T6XPQ8ZAiBirz6drxNg
+2014-07-17 21:18:16.410 HelloCordova[38079:70b] THREAD WARNING: ['Console'] took '97.062988' ms. Plugin should use a background thread.

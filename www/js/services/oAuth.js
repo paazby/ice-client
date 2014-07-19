@@ -37,6 +37,7 @@ angular.module('openfb', [])
          * @param fbScope - The set of Facebook permissions requested
          */
         function login() {
+        debugger;
           var loginWindow;
           // fbScope used if we want to request data from facebook
           var fbScope;
@@ -50,10 +51,8 @@ angular.module('openfb', [])
 
           // If the app is running in Cordova, listen to URL changes in the InAppBrowser until we get a URL with an access_token or an error
           if (runningInCordova) {
-            console.log('running in cordova');
             loginWindow.addEventListener('loadstart', function (event) {
               var url = event.url;
-              alert('url');
               if (url.indexOf("access_token=") > 0 || url.indexOf("error=") > 0) {
                 loginWindow.close();
                 oauthCallback(url);
@@ -62,18 +61,16 @@ angular.module('openfb', [])
 
             loginWindow.addEventListener('loadstop', function(event){
                 var url = event.url;
-                console.log(url);
+                console.log('this is token: ', url);
             });
-            console.log(loginWindow.location.href);
             loginWindow.addEventListener('exit', function () {
               // Handle the situation where the user closes the login window manually before completing the login process
               deferredLogin.reject({error: 'user_cancelled', error_description: 'User cancelled login process', error_reason: "user_cancelled"});
             });
           } else {
-            console.log('in else statement');
              loginWindow.addEventListener('loadstart', function (event) {
               var url = event.url;
-              alert('url');
+
               if (url.indexOf("access_token=") > 0 || url.indexOf("error=") > 0) {
                 loginWindow.close();
                 oauthCallback(url);
@@ -97,14 +94,16 @@ angular.module('openfb', [])
             // Parse the OAuth data received from Facebook
             var queryString;
             var obj;
-
+            console.log('inside of oAuth, heres the url: ',  url)
             loginProcessed = true;
             if (url.indexOf("access_token=") > 0) {
                 queryString = url.substr(url.indexOf('#') + 1);
                 obj = parseQueryString(queryString);
+                console.log('setting access token, heres the object ' + obj);
                 tokenStore['fbtoken'] = obj['access_token'];
                 deferredLogin.resolve();
             } else if (url.indexOf("error=") > 0) {
+                console.log('there was an error');
                 queryString = url.substring(url.indexOf('?') + 1, url.indexOf('#'));
                 obj = parseQueryString(queryString);
                 deferredLogin.reject(obj);

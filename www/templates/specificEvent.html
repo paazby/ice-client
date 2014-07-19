@@ -4,7 +4,7 @@
   <button class="button">Edit</button>
 </div> -->
 
-<ion-view title="Event Info" hide-back-button='true'>
+<ion-view title="{{currentEvent.name.text}}" hide-back-button='true'>
   
   <ion-nav-buttons side='left'>
     <a class="button button-icon icon ion-navicon" ng-click='potentialEvents()'></a>
@@ -14,16 +14,14 @@
     <div class='list card'>
       <div class="item item-icon-right">
         <i class='icon ion-fireball'></i>
-        <h2>{{currentEvent.title}}</h2>
-        <p>December 31, 2014</p>
+        <h2>{{currentEvent.venue.name}}</h2>
+        <p>{{currentEvent.start.local}}</p>
       </div>
 
       <div class="item item-body">
         <img class="full-image" ng-src={{currentEvent.pic}}>
         <p>
-          This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-          the content is from a card-body consisting of an image and paragraph text. The footer
-          consists of tabs, icons aligned left, within the card-footer.
+          {{currentEvent.description.text}}
         </p>
         <p>
           <a href="#" class="subdued">1 Like</a>

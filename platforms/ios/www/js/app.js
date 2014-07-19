@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
-app.run(function($ionicPlatform, $rootScope, Database) {
+app.run(function($ionicPlatform, $rootScope, $window, Database) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -23,20 +23,15 @@ app.run(function($ionicPlatform, $rootScope, Database) {
       $state.go('signin');
       event.preventDefault();
     }
-
-    $rootScope.$on('OAuthException', function() {
-            $state.go('signin');
-        });
   });
-
-  $rootScope.currentUser = {};
-  $rootScope.currentUser.id = 0;
-  $rootScope.currentEvent = {};
 
   Database.potentialMatches().success(function(data) {
     $rootScope.potentialMatches = data.results;
   });
 
+  $rootScope.currentUser = {};
+  $rootScope.currentUser.id = 0;
+  $rootScope.currentEvent = {};
   Database.potentialEvents().success(function(data) {
     $rootScope.potentialEvents = data.results;
     console.log(data);
@@ -127,28 +122,3 @@ app.run(function($ionicPlatform, $rootScope, Database) {
 
 })
 
-// .controller('CardsCtrl', function($scope, $ionicSwipeCardDelegate) {
-
-//   $scope.cards = Array.prototype.slice.call(cardTypes, 0, 0);
-
-//   $scope.cardSwiped = function(index) {
-//     $scope.addCard();
-//   };
-
-//   $scope.cardDestroyed = function(index) {
-//     $scope.cards.splice(index, 1);
-//   };
-
-//   $scope.addCard = function() {
-//     var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
-//     newCard.id = Math.random();
-//     $scope.cards.push(angular.extend({}, newCard));
-//   }
-// })
-
-// .controller('CardCtrl', function($scope, $ionicSwipeCardDelegate) {
-//   $scope.goAway = function() {
-//     var card = $ionicSwipeCardDelegate.getSwipebleCard($scope);
-//     card.swipe();
-//   };
-// });

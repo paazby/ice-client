@@ -6,12 +6,5 @@ app.controller('PotentialEventsCtrl', function($rootScope, $scope, $state, Datab
     $rootScope.currentEvent = eventObj;
     $state.go('specificEvent');
   };
-
-
-  $scope.retrieveEvents = function(){
-    Events.getEvents().then(function(data){
-      console.log(data);
-    });
-  };
   
 });
