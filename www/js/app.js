@@ -5,8 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
-app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) {
+app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state, $http) {
   $ionicPlatform.ready(function() {
+
+    $rootScope.initialDatabaseCall = false;
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
 
@@ -17,18 +19,28 @@ app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) 
       StatusBar.styleDefault();
     }
   });
+  
+    // this checks at every screen change whether the user is logged in
+    // and kicks off the signin process if not logged in
 
   // $rootScope.$on('$stateChangeStart', function(event, toState) {
-  //   if (toState.name !== "signin" && !$window.sessionStorage['fbtoken']) {
-  //     $state.go('signin');
+  //   if (!$rootScope.initialDatabaseCall && $window.localStorage.getItem('jwtToken')) {
+  //     // move database call here
+  //     $rootScope.initialDatabaseCall = true;
   //     event.preventDefault();
   //   }
   // });
-
-  // need url and queryString modules
-
-  Database.potentialMatches().success(function(data) {
-    $rootScope.potentialMatches = data.results;
+  $rootScope.potentialMatches = [];
+  $http({
+      method: 'get',
+      url: 'http://zavadil7.cloudapp.net/allcandidates/?apiKey=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcGlLZXkiOiJ6b3VuZHNfcGVla2luZyJ9.U-2sjzUTITlXuetMgYJJFEQ6LJQ-5mx1dLwUa6xQfFI&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmYl9pZCI6IjEwMTUyMTE2NjkwMTgyMzk2In0.t3Qr-j6cyA5fW2mnjjHO_RDmCi6TcQtw7NW1K42aKJ8'
+    }).success(function(data){
+      for(var i = 0; i < 21; i++) {
+        // data[i]['img'] = ''
+        $rootScope.potentialMatches.push(data[i]);
+      }
+    }).error(function(err){
+      console.log(err);
   });
 
   $rootScope.currentUser = {};
@@ -36,7 +48,7 @@ app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) 
   $rootScope.currentEvent = {};
   Events.getEvents().then(function(results) {
     $rootScope.potentialEvents = results.data.events;
-    console.log($rootScope.potentialEvents)
+//    console.log($rootScope.potentialEvents)
   });
 
   Database.matches($rootScope.currentUser.id).success(function(data) {

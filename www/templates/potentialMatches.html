@@ -6,7 +6,7 @@
   </ion-nav-buttons>
 
   <ion-content>
-     <div ng-style="{'z-index': potentialMatches.length - 1 - $index, 'top': '{{$index}}px', 'left': '0px', 'position': 'absolute'}" ng-repeat='match in potentialMatches' class="list card">
+     <div ng-style="{'z-index': potentialMatches.length - 1 - $index, 'top': '0px', 'left': '0px', 'position': 'absolute'}" ng-repeat='match in potentialMatches' class="list card">
 
       <div class="item assertive item-icon-left">
         <i class='icon ion-fireball'></i>
@@ -20,7 +20,7 @@
 
 
       <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item assertive" ng-click='like($index)'>
+        <a class="tab-item assertive" ng-click='like($index, match.fb_id)'>
           <i class="icon ion-heart"></i>
           Like
         </a>

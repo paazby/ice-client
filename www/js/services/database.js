@@ -16,7 +16,7 @@ app.factory('Database', function($http){
       // find all rows where user1 === currentUserId && count === 2
       // OR user2 === currentUserId && count === 2
       return $http({
-        url: 'http://ice-mockserver.azurewebsites.net/matches', 
+        url: 'http://ice-mockserver.azurewebsites.net/matches' /*+ TokenMaker.makeToken()*/, 
         method: "GET"
       });
     },

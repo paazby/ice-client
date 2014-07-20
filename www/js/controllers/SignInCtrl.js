@@ -1,6 +1,5 @@
-app.controller('SignInCtrl', function($scope, $location, OpenFB, $state) {
+app.controller('SignInCtrl', function($scope, $state, OpenFB, $http) {
   $scope.signIn = function () {
-    // OpenFB.login()
-    $state.go('potentialEvents');
-    };
+    OpenFB.login();
+  };
 });
