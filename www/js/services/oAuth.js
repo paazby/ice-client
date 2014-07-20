@@ -4,8 +4,8 @@ angular.module('openfb', [])
 
         var FB_LOGIN_URL = 'http://zavadil7.cloudapp.net/auth/facebook';
         // By default we store fbtoken in sessionStorage. This can be overriden in init()
-        var tokenStore = window.sessionStorage;
-        var oauthRedirectURL = 'http://zavadil7.cloudapp.net/linden/passman/dustytoken';
+        var tokenStore = window.localStorage;
+        var oauthRedirectURL = 'http://zavadil7.cloudapp.net/linden/passman/dustytoken/';
         // Because the OAuth login spans multiple processes, we need to keep the success/error handlers as variables
         // inside the module instead of keeping them local within the login function.
         var deferredLogin;
@@ -19,9 +19,6 @@ angular.module('openfb', [])
         }, false);
 
         /**
-         * Initialize the OpenFB module. You must use this function and initialize the module with an appId before you can
-         * use any other function.
-         * @param appId - The id of the Facebook app
          * @param redirectURL - The OAuth redirect URL. Optional. If not provided, we use sensible defaults.
          * @param store - The store used to save the Facebook token. Optional. If not provided, we use sessionStorage.
          */
@@ -37,7 +34,6 @@ angular.module('openfb', [])
          * @param fbScope - The set of Facebook permissions requested
          */
         function login() {
-        debugger;
           var loginWindow;
           // fbScope used if we want to request data from facebook
           var fbScope;
@@ -53,9 +49,11 @@ angular.module('openfb', [])
           if (runningInCordova) {
             loginWindow.addEventListener('loadstart', function (event) {
               var url = event.url;
-              if (url.indexOf("access_token=") > 0 || url.indexOf("error=") > 0) {
+              url = url.split('?');
+              // console.log('url:', url)
+              if (url[0] === oauthRedirectURL) {
                 loginWindow.close();
-                oauthCallback(url);
+                oauthCallback(url[1]);
               }
             });
 
@@ -92,21 +90,16 @@ angular.module('openfb', [])
          
         function oauthCallback(url) {
             // Parse the OAuth data received from Facebook
-            var queryString;
+            var serverGeneratedJwt;
             var obj;
             console.log('inside of oAuth, heres the url: ',  url)
             loginProcessed = true;
-            if (url.indexOf("access_token=") > 0) {
-                queryString = url.substr(url.indexOf('#') + 1);
-                obj = parseQueryString(queryString);
-                console.log('setting access token, heres the object ' + obj);
-                tokenStore['fbtoken'] = obj['access_token'];
+            if (url.indexOf("token=") !== -1) {
+                serverGeneratedJwt = url.substr(url.indexOf('=') + 1);
+                console.log('setting token, heres the object', serverGeneratedJwt);
+                tokenStore.setItem('jwtToken', serverGeneratedJwt);
+                console.log('tokenStore.getItem', tokenStore.getItem('jwtToken'));
                 deferredLogin.resolve();
-            } else if (url.indexOf("error=") > 0) {
-                console.log('there was an error');
-                queryString = url.substring(url.indexOf('?') + 1, url.indexOf('#'));
-                obj = parseQueryString(queryString);
-                deferredLogin.reject(obj);
             } else {
                 deferredLogin.reject();
             }
@@ -115,7 +108,9 @@ angular.module('openfb', [])
          * Application-level logout: we simply discard the token.
          */
         function logout() {
-            tokenStore['fbtoken'] = undefined;
+            console.log('logout before', tokenStore.getItem('jwtToken'));
+            tokenStore.setItem('jwtToken', '');
+            console.log('logout after', tokenStore.getItem('jwtToken'));
         }
 
         /**

@@ -7,6 +7,8 @@ var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
 app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) {
   $ionicPlatform.ready(function() {
+
+    $rootScope.initialDatabaseCall = false;
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
 
@@ -17,14 +19,23 @@ app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) 
       StatusBar.styleDefault();
     }
   });
-
+  
+    // this checks at every screen change whether the user is logged in
+    // and kicks off the signin process if not logged in
   // $rootScope.$on('$stateChangeStart', function(event, toState) {
-  //   if (toState.name !== "signin" && !$window.sessionStorage['fbtoken']) {
+  //   if (toState.name !== "signin" && !$window.localStorage['jwtToken']) {
   //     $state.go('signin');
   //     event.preventDefault();
   //   }
   // });
 
+  $rootScope.$on('$stateChangeStart', function(event, toState) {
+    if (!$rootScope.initialDatabaseCall && $window.localStorage.getItem('jwtToken')) {
+      // move database call here
+      $rootScope.initialDatabaseCall = true;
+      event.preventDefault();
+    }
+  });
 
   Database.potentialMatches().success(function(data) {
     $rootScope.potentialMatches = data.results;
@@ -35,7 +46,7 @@ app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) 
   $rootScope.currentEvent = {};
   Events.getEvents().then(function(results) {
     $rootScope.potentialEvents = results.data.events;
-    console.log($rootScope.potentialEvents)
+//    console.log($rootScope.potentialEvents)
   });
 
   Database.matches($rootScope.currentUser.id).success(function(data) {
