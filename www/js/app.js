@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
-app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) {
+app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $http, $window, $state) {
   $ionicPlatform.ready(function() {
 
     $rootScope.initialDatabaseCall = false;
@@ -29,24 +29,29 @@ app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) 
   //   }
   // });
 
-  $rootScope.$on('$stateChangeStart', function(event, toState) {
-    if (!$rootScope.initialDatabaseCall && $window.localStorage.getItem('jwtToken')) {
-      // move database call here
-      $rootScope.initialDatabaseCall = true;
-      event.preventDefault();
-    }
-  });
+  // $rootScope.$on('$stateChangeStart', function(event, toState) {
+  //   if (!$rootScope.initialDatabaseCall && $window.localStorage.getItem('jwtToken')) {
+  //     // move database call here
+  //     $rootScope.initialDatabaseCall = true;
+  //     event.preventDefault();
+  //   }
+  // });
+  
 
-  Database.potentialMatches().success(function(data) {
-    $rootScope.potentialMatches = data.results;
+  MatchLoader.loadAllMatches().then(function(results) {
+    $rootScope.allMatches = results.data;
+    console.log($rootScope.allMatches);
+
+    $rootScope.potentialMatches = $rootScope.allMatches.slice(0, 20);
+    $rootScope.allMatches = $rootScope.allMatches.slice(20);
   });
 
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
   Events.getEvents().then(function(results) {
-  $rootScope.potentialEvents = results.data.events;
-//    console.log($rootScope.potentialEvents)
+    $rootScope.potentialEvents = results.data.events;
+//   console.log($rootScope.potentialEvents)
   });
 
   Database.matches($rootScope.currentUser.id).success(function(data) {
