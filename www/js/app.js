@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
+
 app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $http, $window, $state) {
   $ionicPlatform.ready(function() {
 
@@ -22,9 +23,11 @@ app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $htt
   
     // this checks at every screen change whether the user is logged in
     // and kicks off the signin process if not logged in
+
   // $rootScope.$on('$stateChangeStart', function(event, toState) {
-  //   if (toState.name !== "signin" && !$window.localStorage['jwtToken']) {
-  //     $state.go('signin');
+  //   if (!$rootScope.initialDatabaseCall && $window.localStorage.getItem('jwtToken')) {
+  //     // move database call here
+  //     $rootScope.initialDatabaseCall = true;
   //     event.preventDefault();
   //   }
   // });
