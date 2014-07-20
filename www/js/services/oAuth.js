@@ -90,15 +90,25 @@ angular.module('openfb', [])
          
         function oauthCallback(url) {
             // Parse the OAuth data received from Facebook
-            var serverGeneratedJwt;
+            var apiToken;
+            var userToken;
             var obj;
             console.log('inside of oAuth, heres the url: ',  url)
             loginProcessed = true;
-            if (url.indexOf("token=") !== -1) {
-                serverGeneratedJwt = url.substr(url.indexOf('=') + 1);
-                console.log('setting token, heres the object', serverGeneratedJwt);
-                tokenStore.setItem('jwtToken', serverGeneratedJwt);
+            var apiTokenIndex = url.indexOf('apiToken');
+            var userTokenIndex = url.indexOf('token');
+            if (apiTokenIndex !== -1 && userTokenIndex !== -1) {
+                apiToken = url.slice(url.indexOf('=') + 1);
+                console.log('setting token, heres the object', apiToken);
+                tokenStore.setItem('jwtToken', apiToken);
                 console.log('tokenStore.getItem', tokenStore.getItem('jwtToken'));
+
+                // find second '=', then use substring from there
+                userToken = url.slice.indexOf('=', url.indexOf('=') + 1) + 1;
+
+                // remove the last 4 characters that fb attaches, that we don't want
+                userToken = userToken.slice(0, -4);
+                tokenStore.setItem('userToken', userToken);
                 deferredLogin.resolve();
             } else {
                 deferredLogin.reject();
@@ -111,6 +121,8 @@ angular.module('openfb', [])
             console.log('logout before', tokenStore.getItem('jwtToken'));
             tokenStore.setItem('jwtToken', '');
             console.log('logout after', tokenStore.getItem('jwtToken'));
+
+            tokenStore.setItem('userToken', '');
         }
 
         /**

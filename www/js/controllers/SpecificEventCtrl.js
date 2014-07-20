@@ -1,4 +1,4 @@
-app.controller('SpecificEventCtrl', function($rootScope, $scope, $state, Database) {
+app.controller('SpecificEventCtrl', function($rootScope, $scope, $state, $http, Database) {
 
   $scope.currentEvent = $rootScope.currentEvent;
 

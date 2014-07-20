@@ -1,14 +1,5 @@
 app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, Database) {
 
-  // $scope.init = function() {
-  //   Database.potentialMatches().success(function(data) {
-  //     $scope.potentialMatches = data.results;
-  //     console.log('sdfdsf')
-  //   });
-  // };
-
-  // $scope.init();
-
   $scope.matches = function() {
     $state.go('matches');
   }
@@ -19,8 +10,12 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
     // index. So what had an index of 1 will now have an index of 0, etc.
     // I guess the whole view is re-rendered, instead of just removing
     // one node in the DOM
-    $scope.potentialMatches.splice(index, 1);
+    $rootScope.potentialMatches.splice(index, 1);
 
+    if ($rootScope.potentialMatches.length < 5) {
+      $rootScope.potentialMatches = $rootScope.potentialMatches.concat($rootScope.allMatches.slice(0, 20));
+      $rootScope.allMatches = $rootScope.allMatches.slice(20);
+    }
   };
 
   $scope.sendMessage = function(message) {
@@ -65,15 +60,11 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
   $scope.dislike = function(index) {
     $scope.kill(index);
     console.log('dislike')
-  }
+  };
 
   $scope.info = function() {
     // this should redirect you to a person's profile
     // 
-  }
-
-  $scope.sendMessage = function(message) {
-    console.log(message); 
   };
 
 })

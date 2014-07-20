@@ -3,13 +3,19 @@ app.controller('SpecificMatchCtrl', function($scope, $state, $stateParams, $ioni
   $scope.id = $stateParams.id;
 
   $ionicModal.fromTemplateUrl('templates/chat.html', {
-
     scope: $scope,
     animation: 'slide-in-up'
   })
   .then(function(modal) {
     $scope.modal = modal;
   });
+
+  $scope.sendMessage = function() {
+    var user = prompt('who do you want to send this to?')
+    socket.emit('chat message', {message: $('#m').val(), user: user});
+    $('#m').val('');
+    return false;
+  };
 
   $scope.openModal = function() {
     $scope.modal.show();
