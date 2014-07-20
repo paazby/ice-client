@@ -45,7 +45,7 @@ app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) 
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
   Events.getEvents().then(function(results) {
-    $rootScope.potentialEvents = results.data.events;
+  $rootScope.potentialEvents = results.data.events;
 //    console.log($rootScope.potentialEvents)
   });
 
