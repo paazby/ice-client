@@ -25,6 +25,7 @@ app.run(function($ionicPlatform, $rootScope, Database, Events, $window, $state) 
   //   }
   // });
 
+  // need url and queryString modules
 
   Database.potentialMatches().success(function(data) {
     $rootScope.potentialMatches = data.results;

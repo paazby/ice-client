@@ -1,6 +1,9 @@
-angular.module('openfb', [])
+// var url = require('url');
+// var queryString = require('querystring');
+var app = angular.module('openfb', []);
 
-  .factory('OpenFB', function ($rootScope, $q, $window, $http) {
+
+  app.factory('OpenFB', function ($rootScope, $q, $window, $http) {
 
         var FB_LOGIN_URL = 'http://zavadil7.cloudapp.net/auth/facebook';
         // By default we store fbtoken in sessionStorage. This can be overriden in init()
