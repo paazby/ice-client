@@ -1,4 +1,4 @@
-app.factory('Database', function($http, TokenMaker){
+app.factory('Database', function($http){
   
   var Database = {
 
