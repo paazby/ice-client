@@ -22,13 +22,13 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
     console.log(message);
   };
 
-  $scope.like = function(index, otherId) {
-    console.log(otherId);
+  $scope.like = function(index, targetId) {
+    console.log(targetId);
     $http({
       url: TokenMaker.makeToken() + otherId, // girl
       method: 'POST'
     }).success(function(){
-      console.log('sent your match');
+      console.log('hey');
     }).error(function(err){
       console.log('err');
     });

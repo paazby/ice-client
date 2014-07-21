@@ -7,7 +7,6 @@ app.factory('MatchLoader', function($http, TokenMaker) {
     loadAllMatches: function(allMatches) {
       return $http({
         url: TokenMaker.makeToken(),
-
         method: "GET"
       });
     },

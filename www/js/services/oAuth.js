@@ -95,7 +95,7 @@ var app = angular.module('openfb', []);
             var apiToken;
             var userToken;
             var obj;
-            console.log('inside of oAuth, heres the url: ',  url)
+            console.log('inside of oAuth, heres the url: ',  url);
             loginProcessed = true;
             var apiTokenIndex = url.indexOf('apiToken');
             var userTokenIndex = url.indexOf('token');
