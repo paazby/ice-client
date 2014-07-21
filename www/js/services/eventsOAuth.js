@@ -1,4 +1,4 @@
-app.factory('Events', function($http){
+app.factory('Events', function($http, TokenMaker){
   var Events = {
     getEvents: function(){
       return $http({
@@ -8,7 +8,7 @@ app.factory('Events', function($http){
           q: 'party',
           popular:true,
           'venue.city': 'san francisco',
-          token: ''
+          token: TokenMaker.eventApi()
         }
       });
     }

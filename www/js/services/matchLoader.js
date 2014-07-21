@@ -6,7 +6,7 @@ app.factory('MatchLoader', function($http, TokenMaker) {
 
     loadAllMatches: function(allMatches) {
       return $http({
-        url: TokenMaker.makeToken(),
+        url: 'http://zavadil7.cloudapp.net/allcandidates/' + TokenMaker.makeToken(),
         method: "GET"
       });
     },
