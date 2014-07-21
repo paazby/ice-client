@@ -20,7 +20,7 @@
 
     <div class="list list-inset">
 
-      <a class="item item-avatar" ng-repeat="(id, match) in matches" ng-click="showMatch(id)">
+      <a class="item item-avatar" ng-repeat="(id, match) in matches track by fb_id" ng-click="showMatch(id)">
         <img ng-src="{{match.pic}}">
         <h2>George Clooney</h2>
       </a>

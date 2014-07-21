@@ -45,7 +45,7 @@ app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $htt
     $rootScope.allMatches = results.data;
     console.log($rootScope.allMatches);
     for (var i = 0; i < results.data.length; i++) {
-      if(results.data.is_male === 1) {
+      if(results.data[i].is_male === 1) {
       results.data[i]['pic'] = 'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg';
       } else {
         results.data[i]['pic'] = 'http://si.wsj.net/public/resources/images/BN-BY925_mag041_OZ_20140318165119.jpg';
