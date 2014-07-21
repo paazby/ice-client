@@ -22,13 +22,13 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
     console.log(message);
   };
 
-  $scope.like = function(index, otherId) {
-    console.log(otherId);
+  $scope.like = function(index, targetId) {
+    console.log(targetId);
     $http({
       method: 'post',
-      url: "http://zavadil7.cloudapp.net/matches/?apiKey=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcGlLZXkiOiJ6b3VuZHNfcGVla2luZyJ9.U-2sjzUTITlXuetMgYJJFEQ6LJQ-5mx1dLwUa6xQfFI&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmYl9pZCI6IjEwMTUyMTE2NjkwMTgyMzk2In0.t3Qr-j6cyA5fW2mnjjHO_RDmCi6TcQtw7NW1K42aKJ8&fb_id=" + otherId,
+      url: "" + targetId,
     }).success(function(){
-      console.log('sent your match');
+      console.log('hey');
     }).error(function(err){
       console.log(err);
     });
