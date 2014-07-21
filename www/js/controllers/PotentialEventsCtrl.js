@@ -1,4 +1,4 @@
-app.controller('PotentialEventsCtrl', function($rootScope, $scope, $state, Database, Events, $http) {
+app.controller('PotentialEventsCtrl', function($rootScope, $scope, $state, Events, $http) {
 
   // $scope.events = Database.potentialEvents();
 
