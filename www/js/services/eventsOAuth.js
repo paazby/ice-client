@@ -17,6 +17,3 @@ app.factory('Events', function($http){
 
   return Events;
 });
-
-
-// 4IP4VYD2JFW2MOT2Y7EC

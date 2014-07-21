@@ -12,9 +12,9 @@ app.controller('SpecificEventCtrl', function($rootScope, $scope, $state, $http, 
 
   $scope.potentialEvents = function() {
     $state.go('potentialEvents');
-  }
+  };
 
   $scope.hey = function() {
-    console.log('hey')
-  }
-})
+    console.log('hey');
+  };
+});
