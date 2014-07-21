@@ -8,7 +8,7 @@ app.factory('Events', function($http){
           q: 'party',
           popular:true,
           'venue.city': 'san francisco',
-          token: ''
+          token: '4IP4VYD2JFW2MOT2Y7EC'
         }
       });
     }

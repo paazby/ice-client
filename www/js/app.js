@@ -43,7 +43,7 @@ app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $htt
 
   MatchLoader.loadAllMatches().then(function(results) {
     $rootScope.allMatches = results.data;
-    console.log($rootScope.allMatches);
+    // console.log($rootScope.allMatches);
     for (var i = 0; i < results.data.length; i++) {
       if(results.data[i].is_male === 1) {
       results.data[i]['pic'] = 'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg';
