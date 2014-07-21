@@ -8,11 +8,11 @@ var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
 app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $http, $window, $state) {
   $ionicPlatform.ready(function() {
-
+    
     $rootScope.initialDatabaseCall = false;
+    $rootScope.shouldRedirectToPotentialMatches = false;
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
@@ -25,9 +25,17 @@ app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $htt
     // and kicks off the signin process if not logged in
 
   // $rootScope.$on('$stateChangeStart', function(event, toState) {
-  //   if (!$rootScope.initialDatabaseCall && $window.localStorage.getItem('jwtToken')) {
-  //     // move database call here
-  //     $rootScope.initialDatabaseCall = true;
+  //   if ($window.localStorage.getItem('jwtToken')) {
+  //     if (!$rootScope.initialDatabaseCall) {
+  //       $rootScope.initialDatabaseCall = true;
+  //       // move database call here
+  //     }
+
+  //     // if (!$rootScope.shouldRedirectToPotentialMatches) {
+  //     //   $rootScope.shouldRedirectToPotentialMatches = true;
+  //     //   $state.go('potentialEvents');
+  //     // }
+
   //     event.preventDefault();
   //   }
   // });

@@ -1,4 +1,4 @@
-app.factory('MatchLoader', function($http) {
+app.factory('MatchLoader', function($http, TokenMaker) {
   
   var matches = [];
 
@@ -6,7 +6,7 @@ app.factory('MatchLoader', function($http) {
 
     loadAllMatches: function(allMatches) {
       return $http({
-        url: '',
+        url: 'http://zavadil7.cloudapp.net/allcandidates/' + TokenMaker.makeToken(),
         method: "GET"
       });
     },

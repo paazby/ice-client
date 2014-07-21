@@ -1,4 +1,4 @@
-app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, Database, $http) {
+app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, Database, $http, TokenMaker) {
 
   $scope.matches = function() {
     $state.go('matches');
@@ -25,12 +25,12 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
   $scope.like = function(index, targetId) {
     console.log(targetId);
     $http({
-      method: 'post',
-      url: "" + targetId,
+      url: TokenMaker.makeToken() + otherId, // girl
+      method: 'POST'
     }).success(function(){
       console.log('hey');
     }).error(function(err){
-      console.log(err);
+      console.log('err');
     });
 
 
