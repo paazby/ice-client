@@ -111,7 +111,7 @@ var app = angular.module('openfb', []);
                 // remove the last 4 characters that fb attaches, that we don't want
                 userToken = userToken.slice(0, -4);
                 tokenStore.setItem('userToken', userToken);
-                deferredLogin.resolve();
+                deferredLogin.resolve(); 
             } else {
                 deferredLogin.reject();
             }
