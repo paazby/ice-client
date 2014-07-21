@@ -1,4 +1,4 @@
-app.factory('MatchLoader', function($http, TokenMaker) {
+app.factory('MatchLoader', function($http, TokenMaker, $rootScope) {
   
   var matches = [];
 
@@ -8,8 +8,17 @@ app.factory('MatchLoader', function($http, TokenMaker) {
       return $http({
         url: 'http://zavadil7.cloudapp.net/allcandidates/' + TokenMaker.makeToken(),
         method: "GET"
+      }).success(function(data){
+        data.reverse();
       });
     },
+
+    loadCurrentMatches: function() {
+      return $http({
+      method: 'get',
+      url: 'http://zavadil7.cloudapp.net/matches/' + TokenMaker.makeToken(),
+      });
+    }
 
     
 

@@ -6,7 +6,7 @@
 var app = angular.module('icebreaker', ['ionic', 'openfb']);
 
 
-app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $http, $window, $state) {
+app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window, $state) {
   $ionicPlatform.ready(function() {
     
     $rootScope.initialDatabaseCall = false;
@@ -40,18 +40,8 @@ app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $htt
   //   }
   // });
 
-  // $rootScope.$on('$stateChangeStart', function(event, toState) {
-  //   if (!$rootScope.initialDatabaseCall && $window.localStorage.getItem('jwtToken')) {
-  //     // move database call here
-  //     $rootScope.initialDatabaseCall = true;
-  //     event.preventDefault();
-  //   }
-  // });
-  
-
   MatchLoader.loadAllMatches().then(function(results) {
     $rootScope.allMatches = results.data;
-    console.log($rootScope.allMatches);
     for (var i = 0; i < results.data.length; i++) {
       if(results.data[i].is_male === 1) {
       results.data[i]['pic'] = 'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg';
@@ -61,7 +51,14 @@ app.run(function($ionicPlatform, $rootScope, Database, MatchLoader, Events, $htt
     }
     $rootScope.potentialMatches = $rootScope.allMatches.slice(0, 20);
     $rootScope.allMatches = $rootScope.allMatches.slice(20);
+    console.log($rootScope.potentialMatches);
   });
+
+  MatchLoader.loadCurrentMatches().success(function(results){
+    $rootScope.currentMatches = results;
+    console.log($rootScope.currentMatches);
+  });
+  
 
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
