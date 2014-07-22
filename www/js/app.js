@@ -51,20 +51,23 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
     }
     $rootScope.potentialMatches = $rootScope.allMatches.slice(0, 20);
     $rootScope.allMatches = $rootScope.allMatches.slice(20);
-    console.log($rootScope.potentialMatches);
   });
 
   MatchLoader.loadCurrentMatches().success(function(results){
     $rootScope.currentMatches = results;
-    console.log($rootScope.currentMatches);
   });
   
 
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
-  Events.getEvents().then(function(results) {
-    $rootScope.potentialEvents = results.data.events;
+  Events.getEvents().success(function(results) {
+    for (var i = 0; i < results.events.length; i++) {
+      if (results.events[i]['logo_url']  === null) {
+        results.events[i]['logo_url'] = 'http://images.wikia.com/restaurantcity/images/archive/7/77/20110517175454!Ice.png';
+      }
+    }
+    $rootScope.potentialEvents = results.events;
   });
 })
 
