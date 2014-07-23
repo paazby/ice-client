@@ -40,24 +40,13 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
   //   }
   // });
 
-  MatchLoader.loadAllMatches().then(function(results) {
-    $rootScope.allMatches = results.data;
-    for (var i = 0; i < results.data.length; i++) {
-      if(results.data[i].is_male === 1) {
-      results.data[i]['pic'] = 'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg';
-      } else {
-        results.data[i]['pic'] = 'http://si.wsj.net/public/resources/images/BN-BY925_mag041_OZ_20140318165119.jpg';
-      }
-    }
-    $rootScope.potentialMatches = $rootScope.allMatches.slice(0, 20);
-    $rootScope.allMatches = $rootScope.allMatches.slice(20);
-  });
-
-  MatchLoader.loadCurrentMatches().success(function(results){
-    $rootScope.currentMatches = results;
-  });
-  
-
+  // $rootScope.$on('$stateChangeStart', function(event, toState) {
+  //   if (!$rootScope.initialDatabaseCall && $window.localStorage.getItem('jwtToken')) {
+  //     // move database call here
+  //     $rootScope.initialDatabaseCall = true;
+  //     event.preventDefault();
+  //   }
+  // });
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
@@ -71,8 +60,10 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
 
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+
+  $httpProvider.interceptors.push('httpRequestInterceptor');
   $urlRouterProvider.otherwise("/sign-in");
 
   $stateProvider

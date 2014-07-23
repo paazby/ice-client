@@ -60,8 +60,7 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
             },
           ]
         });
-      }
-      
+      }      
     }).error(function(err){
       console.log('err');
     });
@@ -83,10 +82,10 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
 
 
-  $scope.dislike = function(index) {
+  $scope.dislike = function(index, targetId) {
     $scope.kill(index);
 
-    console.log('dislike');
+    console.log('dislike', targetId);
   };
 
   $scope.info = function() {
