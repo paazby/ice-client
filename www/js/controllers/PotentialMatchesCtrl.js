@@ -1,4 +1,4 @@
-app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, Database, $http/*, TokenMaker*/) {
+app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, $http, TokenMaker) {
 
   $scope.matches = function() {
     $state.go('matches');
@@ -25,10 +25,42 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
   $scope.like = function(index, targetId) {
     console.log(targetId);
     $http({
-      url: 'http://zavadil7.cloudapp.net/matches/' + TokenMaker.makeToken() + "&target_id=" + targetId,
+      url: 'http://zavadil7.cloudapp.net/matches/' + TokenMaker.makeToken() + '&target_id=' + targetId,
       method: 'POST'
     }).success(function(data){
       console.log(data);
+      var isMatch = data.count === 2;
+      if (isMatch) {
+        $rootScope.currentMatches.push(data);
+        console.log($rootScope.currentMatches);
+        $scope.data = {};
+        var matchPopup = $ionicPopup.show({
+          template: '<input type="text" ng-model="data.message">',
+          title: 'You have a match!',
+          subTitle: 'Send them a message!',
+          scope: $scope,
+          buttons: [
+            {
+              text: 'Not Now',
+              onTap: function() {
+                $scope.kill(index);
+              }
+            },
+            {
+              text: 'Send',
+              type: 'button-positive',
+              onTap: function(e) {
+                if ($scope.data.message === undefined) {
+                  e.preventDefault();
+                } else {
+                  $scope.sendMessage($scope.data.message);
+                  $scope.kill(index);
+                }
+              }
+            },
+          ]
+        });
+      }      
     }).error(function(err){
       console.log('err');
     });
@@ -39,35 +71,6 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
 
 
-    // var isMatch = Database.isMatch($rootScope.currentUser.uid, otherId);
-    // if (isMatch) {
-    //   $scope.data = {};
-    //   var matchPopup = $ionicPopup.show({
-    //     template: '<input type="text" ng-model="data.message">',
-    //     title: 'You have a match!',
-    //     subTitle: 'Send them a message!',
-    //     scope: $scope,
-    //     buttons: [
-    //       { 
-    //         text: 'Not Now',
-    //         onTap: function() {
-    //           $scope.kill(index);
-    //         }
-    //       },
-    //       {
-    //         text: 'Send',
-    //         type: 'button-positive',
-    //         onTap: function(e) {
-    //           if ($scope.data.message === undefined) {
-    //             e.preventDefault();
-    //           } else {
-    //             $scope.sendMessage($scope.data.message);
-    //             $scope.kill(index);
-    //           }
-    //         }
-    //       },
-    //     ]
-    // });
 
 
     // isMatch functionality needs to be put inside .success in http call

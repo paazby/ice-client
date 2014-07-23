@@ -1,4 +1,5 @@
 app.factory('MatchLoader', function($http) {
+
   
   var matches = [];
 
@@ -8,6 +9,8 @@ app.factory('MatchLoader', function($http) {
       return $http({
         url: 'http://zavadil7.cloudapp.net/allcandidates/',
         method: "GET"
+      }).success(function(data){
+        data.reverse();
       });
     },
     

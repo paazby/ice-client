@@ -1,28 +1,16 @@
-
-<ion-view title='Matches'>
-  <ion-content class="has-header">
-    <ion-list>
-      <ion-item ng-repeat="match in matches" ng-click='showMatch(match)'>
-        {{match}}
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-view>
- -->
-
  <ion-view title='Matches' hide-back-button='false'>
 
   <ion-nav-buttons side='right'>
-    <a class="button button-icon icon ion-ios7-people" ng-click='potentialMatches()'></a>
+    <a class="button button-icon icon ion-ios7-people" ng-click='goToPotentialMatches()'></a>
   </ion-nav-buttons>
 
    <ion-content class="has-header">
 
     <div class="list list-inset">
 
-      <a class="item item-avatar" ng-repeat="(id, match) in matches track by fb_id" ng-click="showMatch(id)">
+      <a class="item item-avatar" ng-repeat="match in potentialMatches" ng-click="showMatch(id)">
         <img ng-src="{{match.pic}}">
-        <h2>George Clooney</h2>
+        <h2>{{match.username}}</h2>
       </a>
 
     </div>
