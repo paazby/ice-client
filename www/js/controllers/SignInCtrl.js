@@ -1,7 +1,8 @@
-app.controller('SignInCtrl', function($scope, OpenFB, $location) {
+
+app.controller('SignInCtrl', function($scope, OpenFB, $state) {
   $scope.signIn = function () {
     OpenFB.login().then(function() { // figure out how to get route change working
-    // $location.path('/potentialEvents');
+      $state.go('potentialEvents');
     });
   };
 });
