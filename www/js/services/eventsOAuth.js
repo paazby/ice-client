@@ -6,7 +6,7 @@ app.factory('Events', function($http, TokenMaker){
         url: 'https://www.eventbriteapi.com/v3/events/search/',
         params: {
           q: 'party',
-          popular:true,
+          popular: true,
           'venue.city': 'san francisco',
           token: TokenMaker.eventApi()
         }

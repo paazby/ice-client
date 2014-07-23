@@ -1,4 +1,4 @@
-app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, Database, $http, TokenMaker) {
+app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, Database, $http/*, TokenMaker*/) {
 
   $scope.matches = function() {
     $state.go('matches');
@@ -25,10 +25,10 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
   $scope.like = function(index, targetId) {
     console.log(targetId);
     $http({
-      url: TokenMaker.makeToken() + otherId, // girl
+      url: 'http://zavadil7.cloudapp.net/matches/' + TokenMaker.makeToken() + "&target_id=" + targetId,
       method: 'POST'
-    }).success(function(){
-      console.log('hey');
+    }).success(function(data){
+      console.log(data);
     }).error(function(err){
       console.log('err');
     });
@@ -79,10 +79,10 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
 
 
-  $scope.dislike = function(index) {
+  $scope.dislike = function(index, targetId) {
     $scope.kill(index);
 
-    console.log('dislike');
+    console.log('dislike', targetId);
   };
 
   $scope.info = function() {

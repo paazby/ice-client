@@ -1,5 +1,7 @@
 app.controller('MatchesCtrl', function($rootScope, $scope, $state) {
 
+  $scope.matches = [1,2,3,4,5];
+
   $scope.showMatch = function(matchId) {
     console.log(matchId);
     // $state.go(// page with info about specific match)
