@@ -23,11 +23,18 @@ app.controller('SpecificMatchCtrl', function($scope, $state, $ionicModal/*, sock
     return false;
   };
 
-  socket.once('chat message', function(msg){
-    // should only append to a somwhere holding
-    // only msg.sender + receiver message
-    console.log(msg.msg)
-  });
+  $scope.displayMessage = function() {
+    
+    socket.once('chat message', function(msg){
+      // should only append to a somwhere holding
+      // only msg.sender + receiver message
+      console.log(msg.msg)
+      $scope.displayMessage();
+    });
+
+  };
+
+  $scope.displayMessage();
 
   $scope.openModal = function() {
     $scope.modal.show();
