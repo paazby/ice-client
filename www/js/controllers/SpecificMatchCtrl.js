@@ -1,6 +1,6 @@
-app.controller('SpecificMatchCtrl', function($scope, $state, $stateParams, $ionicModal) {
+app.controller('SpecificMatchCtrl', function($scope, $state, $ionicModal/*, socket*/) {
 
-  $scope.id = $stateParams.id;
+  // $scope.id = $stateParams.id;
 
   $ionicModal.fromTemplateUrl('templates/chat.html', {
     scope: $scope,
@@ -10,12 +10,22 @@ app.controller('SpecificMatchCtrl', function($scope, $state, $stateParams, $ioni
     $scope.modal = modal;
   });
 
+  $scope.message = {};
+  $scope.message.message = '';
+
   $scope.sendMessage = function() {
     var user = prompt('who do you want to send this to?')
-    socket.emit('chat message', {message: $('#m').val(), user: user});
-    $('#m').val('');
+    // socket.emit('chat message', {message: $('#m').val(), user: user});
+    socket.emit('chat message', $scope.message.message);
+    // console.log($scope.message.message);
+    $scope.message.message = '';
     return false;
   };
+
+  $scope.$on('socket:broadcast', function(event, data) {
+      // $log.debug('got a message', event.name);
+      alert('got a message', event.name);
+  });
 
   $scope.openModal = function() {
     $scope.modal.show();
