@@ -48,19 +48,21 @@
     <script src='js/services/oAuth.js'></script>
     <script src='js/services/timeFilter.js'></script>
     <script src='js/services/socket.js'></script>
+    <script src='js/chatHelper.js'></script>
 
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script>
+   <!-- <script>
       socket.on('chat message', function(msg){
         // should only append to a somwhere holding
         // only msg.sender + receiver message
-        console.log(msg)
+        console.log(msg.msg)
       });
 
-      var user = prompt("please enter your name");
-      socket.emit('join', {user: user});
+      // var user = prompt("please enter your name");
+      // socket.emit('join', {user: user});
     </script>
+-->
     <script src="cordova.js"></script>
   </body>
 </html>

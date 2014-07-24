@@ -47,6 +47,18 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
   //     event.preventDefault();
   //   }
   // });
+  
+  // var socket = io('http://ice-chat.cloudapp.net:80');
+  
+  // socket.on('chat message', function(msg){
+  //   // should only append to a somwhere holding
+  //   // only msg.sender + receiver message
+  //   console.log(msg.msg)
+  // });
+
+  var user = prompt("please enter your name");
+  socket.emit('join', {user: user});
+
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};

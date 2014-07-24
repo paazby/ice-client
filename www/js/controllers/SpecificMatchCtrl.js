@@ -10,21 +10,23 @@ app.controller('SpecificMatchCtrl', function($scope, $state, $ionicModal/*, sock
     $scope.modal = modal;
   });
 
-  $scope.message = {};
-  $scope.message.message = '';
+  $scope.msg = {};
+  $scope.msg.msg = '';
 
   $scope.sendMessage = function() {
     var user = prompt('who do you want to send this to?')
-    // socket.emit('chat message', {message: $('#m').val(), user: user});
-    socket.emit('chat message', $scope.message.message);
-    // console.log($scope.message.message);
-    $scope.message.message = '';
+    // socket.emit('chat msg', {msg: $('#m').val(), user: user});
+    // socket.emit('chat msg', $scope.msg.msg);
+    socket.emit('chat message', {msg: $scope.msg.msg, to: user /*,from: currentUser*/});
+    // console.log($scope.msg.msg);
+    $scope.msg.msg = '';
     return false;
   };
 
-  $scope.$on('socket:broadcast', function(event, data) {
-      // $log.debug('got a message', event.name);
-      alert('got a message', event.name);
+  socket.once('chat message', function(msg){
+    // should only append to a somwhere holding
+    // only msg.sender + receiver message
+    console.log(msg.msg)
   });
 
   $scope.openModal = function() {

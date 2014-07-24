@@ -5,24 +5,20 @@
     <button class="button button-icon icon ion-close" ng-click="closeModal()"></button>
   </div>
   <ion-content>
-
+    <ul class="list">
+        <li class="item" >
+          
+        </li>
+    </ul>
   </ion-content>
 
   <div class="bar bar-footer bar-stable item-input-inset">
    <label class="item-input-wrapper">
-      <input type="text" ng-model='message.message' placeholder="be creepy">
+      <input type="text" ng-model='msg.msg' placeholder="be creepy">
     </label>
     <button id='a' class="button button-icon icon ion-ios7-paperplane" ng-click='sendMessage()'>
     </button>
 
   </div>
 
- <!-- <script>
-    socket.on('chat message', function(msg){
-      // should only append to a somwhere holding
-      // only msg.sender + receiver message
-      alert('i got the message!!!')
-    });
-  </script>
--->
 </div>
