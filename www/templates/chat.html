@@ -5,29 +5,20 @@
     <button class="button button-icon icon ion-close" ng-click="closeModal()"></button>
   </div>
   <ion-content>
-
+    <ul class="list">
+        <li class="item" >
+          
+        </li>
+    </ul>
   </ion-content>
 
   <div class="bar bar-footer bar-stable item-input-inset">
    <label class="item-input-wrapper">
-      <input type="text" placeholder="be creepy">
+      <input type="text" ng-model='msg.msg' placeholder="be creepy">
     </label>
-    <button class="button button-icon icon ion-ios7-paperplane" ng-click='sendMessage()'>
+    <button id='a' class="button button-icon icon ion-ios7-paperplane" ng-click='sendMessage()'>
     </button>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      var socket = io();
-
-      socket.on('chat message', function(msg){
-        alert("hello");
-        // $('#messages').append($('<li>').text(msg));
-      });
-      var user = prompt("please enter your name");
-      console.log(user);
-      socket.emit('join', {user: user});
-    </script>
   </div>
 
 </div>
