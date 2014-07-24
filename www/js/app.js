@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('icebreaker', ['ionic', 'openfb']);
+var app = angular.module('icebreaker', ['ionic', 'openfb'/*, 'btford.socket-io'*/]);
 
 
 app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window, $state) {
@@ -47,6 +47,17 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
   //     event.preventDefault();
   //   }
   // });
+  
+  // var socket = io('http://ice-chat.cloudapp.net:80');
+  
+  // socket.on('chat message', function(msg){
+  //   // should only append to a somwhere holding
+  //   // only msg.sender + receiver message
+  //   console.log(msg.msg)
+  // });
+
+  var user = prompt("please enter your name");
+  socket.emit('join', {user: user});
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
@@ -58,12 +69,27 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
     }
     $rootScope.potentialEvents = results.events;
   });
+
+  MatchLoader.loadAllMatches().then(function(results) {
+    $rootScope.allMatches = results.data;
+    // console.log($rootScope.allMatches);
+    for (var i = 0; i < results.data.length; i++) {
+      if(results.data[i].is_male === 1) {
+      results.data[i]['pic'] = 'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg';
+      } else {
+        results.data[i]['pic'] = 'http://si.wsj.net/public/resources/images/BN-BY925_mag041_OZ_20140318165119.jpg';
+      }
+    }
+    $rootScope.potentialMatches = $rootScope.allMatches.slice(0, 20);
+    $rootScope.allMatches = $rootScope.allMatches.slice(20);
+  });
 })
 
 
 .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
-  $httpProvider.interceptors.push('httpRequestInterceptor');
+
+  // $httpProvider.interceptors.push('httpRequestInterceptor');
   $urlRouterProvider.otherwise("/sign-in");
 
   $stateProvider
