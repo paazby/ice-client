@@ -61,8 +61,14 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
   $rootScope.listenerSet = false;
 
   // $rootScope.currentUser = $http call to get current user;
-  $rootScope.currentUser = {id: 714089305303365, name: 'paul'};
-  // socket.emit('join', {user: $rootScope.currentUser.id});
+  $http({
+    url: 'http://zavadil7.cloudapp.net/currentuser?apiKey=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcGlLZXkiOiJ6b3VuZHNfcGVla2luZyJ9.U-2sjzUTITlXuetMgYJJFEQ6LJQ-5mx1dLwUa6xQfFI&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmYl9pZCI6IjcxNDA4OTMwNTMwMzM2NSJ9.VhKU-hHYhjboq882KWufV9_Mj4V9iOljM5yb_aC1wZg',
+    method: "GET"
+  }).success(function(currentUser){
+    console.log(currentUser);
+    $rootScope.currentUser = currentUser;
+    socket.emit('join', {user: $rootScope.currentUser.id});
+  });
 
   Events.getEvents().success(function(results) {
     for (var i = 0; i < results.events.length; i++) {

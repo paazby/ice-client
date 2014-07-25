@@ -12,7 +12,7 @@ app.controller('SpecificMatchCtrl', function($scope, $state, $ionicModal, $rootS
   $scope.msg.msg = '';
 
   $scope.sendMessage = function() {
-    // var user = prompt('who do you want to send this to?')
+    var currentUser = $rootScope.currentUser.fb_id;
     socket.emit('chat message', {msg: $scope.msg.msg, to: $stateParams.matchId, from: currentUser});
     $scope.msg.msg = '';
     return false;
@@ -21,7 +21,7 @@ app.controller('SpecificMatchCtrl', function($scope, $state, $ionicModal, $rootS
   $scope.displayMessage = function() {
     if (!$rootScope.listenerSet) {
       socket.on('chat message', function(msg){
-        // should only append to a somwhere holding
+        // should only append to somwhere holding
         // only msg.sender + receiver message
         var from = msg.from;
         var li = $('<li>').addClass('item').text(msg.msg);
