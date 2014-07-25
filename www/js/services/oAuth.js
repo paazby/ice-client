@@ -119,7 +119,6 @@ app.factory('OpenFB', function ($rootScope, $q, $window, $http, MatchLoader) {
             //   $rootScope.potentialMatches = $rootScope.allMatches.slice(0, 20);
             //   $rootScope.allMatches = $rootScope.allMatches.slice(20);
             // });
-
             deferredLogin.resolve(); 
         } else {
             deferredLogin.reject();

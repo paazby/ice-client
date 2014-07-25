@@ -1,4 +1,4 @@
-app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, $http, TokenMaker) {
+app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, $http, TokenMaker, MatchLoader) {
 
   $scope.matches = function() {
     $state.go('matches');
@@ -23,16 +23,13 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
   };
 
   $scope.like = function(index, targetId) {
-    console.log(targetId);
     $http({
       url: 'http://zavadil7.cloudapp.net/matches/' + TokenMaker.makeToken() + '&target_id=' + targetId,
       method: 'POST'
     }).success(function(data){
       console.log(data);
-      var isMatch = data.count === 2;
+      var isMatch = data.matched;
       if (isMatch) {
-        $rootScope.currentMatches.push(data);
-        console.log($rootScope.currentMatches);
         $scope.data = {};
         var matchPopup = $ionicPopup.show({
           template: '<input type="text" ng-model="data.message">',

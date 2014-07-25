@@ -58,7 +58,6 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
 
   var user = prompt("please enter your name");
   socket.emit('join', {user: user});
-
   $rootScope.currentUser = {};
   $rootScope.currentUser.id = 0;
   $rootScope.currentEvent = {};
@@ -84,10 +83,22 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
     $rootScope.potentialMatches = $rootScope.allMatches.slice(0, 20);
     $rootScope.allMatches = $rootScope.allMatches.slice(20);
   });
+
+  MatchLoader.loadCurrentMatches().success(function(data){
+    $rootScope.currentMatches = data;
+    for (var i = 0; i < $rootScope.currentMatches.length; i++) {
+      if($rootScope.currentMatches[i].is_male === 1) {
+      $rootScope.currentMatches[i]['pic'] = 'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg';
+      } else {
+        $rootScope.currentMatches[i]['pic'] = 'http://si.wsj.net/public/resources/images/BN-BY925_mag041_OZ_20140318165119.jpg';
+      }
+    }
+  });
 })
 
 
 .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+
 
   // $httpProvider.interceptors.push('httpRequestInterceptor');
   $urlRouterProvider.otherwise("/sign-in");
