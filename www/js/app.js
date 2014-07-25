@@ -1,4 +1,4 @@
-// Ionic Starter App
+// Icebreaker
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -56,12 +56,14 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
   //   console.log(msg.msg)
   // });
 
-  var user = prompt("please enter your name");
-  socket.emit('join', {user: user});
+  // var user = prompt("please enter your name");
+  // socket.emit('join', {user: user});
+  $rootScope.listenerSet = false;
 
-  $rootScope.currentUser = {};
-  $rootScope.currentUser.id = 0;
-  $rootScope.currentEvent = {};
+  // $rootScope.currentUser = $http call to get current user;
+  $rootScope.currentUser = {id: 714089305303365, name: 'paul'};
+  // socket.emit('join', {user: $rootScope.currentUser.id});
+
   Events.getEvents().success(function(results) {
     for (var i = 0; i < results.events.length; i++) {
       if (results.events[i]['logo_url']  === null) {
@@ -73,7 +75,7 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
 
   MatchLoader.loadAllMatches().then(function(results) {
     $rootScope.allMatches = results.data;
-    // console.log($rootScope.allMatches);
+    console.log($rootScope.allMatches);
     for (var i = 0; i < results.data.length; i++) {
       if(results.data[i].is_male === 1) {
       results.data[i]['pic'] = 'http://yourgrantauthority.com/wp-content/uploads/2012/09/George_Clooney-0508.jpg';
@@ -133,5 +135,11 @@ app.run(function($ionicPlatform, $rootScope, MatchLoader, Events, $http, $window
       url: '/specificEvent',
       templateUrl: 'templates/specificEvent.html',
       controller: 'SpecificEventCtrl'
-    });
+    })
+
+    .state('chat', {
+      url: '/chat',
+      templateUrl: 'templates/chat2.html',
+      controller: 'ChatCtrl'
+    })
   });
