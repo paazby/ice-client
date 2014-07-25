@@ -1,4 +1,4 @@
-app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, $http, TokenMaker) {
+app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ionicPopup, $http, TokenMaker, MatchLoader) {
 
   $scope.matches = function() {
     $state.go('matches');
@@ -23,7 +23,6 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
   };
 
   $scope.like = function(index, targetId) {
-    console.log(targetId);
     $http({
       // url: 'http://zavadil7.cloudapp.net/matches/' + TokenMaker.makeToken() + '&target_id=' + targetId,
       url: 'http://zavadil7.cloudapp.net/matches/?apiKey=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcGlLZXkiOiJ6b3VuZHNfcGVla2luZyJ9.U-2sjzUTITlXuetMgYJJFEQ6LJQ-5mx1dLwUa6xQfFI&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmYl9pZCI6IjcxNDA4OTMwNTMwMzM2NSJ9.VhKU-hHYhjboq882KWufV9_Mj4V9iOljM5yb_aC1wZg&target_id=' + targetId,
@@ -32,8 +31,6 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
       console.log(data);
       var isMatch = data.matched;
       if (isMatch) {
-        $rootScope.currentMatches.push(data);
-        console.log($rootScope.currentMatches);
         $scope.data = {};
         var matchPopup = $ionicPopup.show({
           template: '<input type="text" ng-model="data.message">',
