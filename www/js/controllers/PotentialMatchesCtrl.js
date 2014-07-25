@@ -24,7 +24,8 @@ app.controller('PotentialMatchesCtrl', function($rootScope, $scope, $state, $ion
 
   $scope.like = function(index, targetId) {
     $http({
-      url: 'http://zavadil7.cloudapp.net/matches/' + TokenMaker.makeToken() + '&target_id=' + targetId,
+      // url: 'http://zavadil7.cloudapp.net/matches/' + TokenMaker.makeToken() + '&target_id=' + targetId,
+      url: 'http://zavadil7.cloudapp.net/matches/?apiKey=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcGlLZXkiOiJ6b3VuZHNfcGVla2luZyJ9.U-2sjzUTITlXuetMgYJJFEQ6LJQ-5mx1dLwUa6xQfFI&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmYl9pZCI6IjcxNDA4OTMwNTMwMzM2NSJ9.VhKU-hHYhjboq882KWufV9_Mj4V9iOljM5yb_aC1wZg&target_id=' + targetId,
       method: 'POST'
     }).success(function(data){
       console.log(data);

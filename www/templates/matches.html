@@ -8,7 +8,7 @@
 
     <div class="list list-inset">
 
-      <a class="item item-avatar" ng-repeat="match in currentMatches" ng-click="showMatch(id)">
+      <a class="item item-avatar" ng-repeat="match in potentialMatches" ng-click="showMatch(match.fb_id)">
         <img ng-src="{{match.pic}}">
         <h2>{{match.username}}</h2>
       </a>

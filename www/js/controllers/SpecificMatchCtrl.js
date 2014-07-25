@@ -1,6 +1,4 @@
-app.controller('SpecificMatchCtrl', function($scope, $state, $ionicModal/*, socket*/) {
-
-  // $scope.id = $stateParams.id;
+app.controller('SpecificMatchCtrl', function($scope, $state, $ionicModal, $rootScope, $stateParams) {
 
   $ionicModal.fromTemplateUrl('templates/chat.html', {
     scope: $scope,
@@ -14,24 +12,23 @@ app.controller('SpecificMatchCtrl', function($scope, $state, $ionicModal/*, sock
   $scope.msg.msg = '';
 
   $scope.sendMessage = function() {
-    var user = prompt('who do you want to send this to?')
-    // socket.emit('chat msg', {msg: $('#m').val(), user: user});
-    // socket.emit('chat msg', $scope.msg.msg);
-    socket.emit('chat message', {msg: $scope.msg.msg, to: user /*,from: currentUser*/});
-    // console.log($scope.msg.msg);
+    var currentUser = $rootScope.currentUser.fb_id;
+    socket.emit('chat message', {msg: $scope.msg.msg, to: $stateParams.matchId, from: currentUser});
     $scope.msg.msg = '';
     return false;
   };
 
   $scope.displayMessage = function() {
-    
-    socket.once('chat message', function(msg){
-      // should only append to a somwhere holding
-      // only msg.sender + receiver message
-      console.log(msg.msg)
-      $scope.displayMessage();
-    });
-
+    if (!$rootScope.listenerSet) {
+      socket.on('chat message', function(msg){
+        // should only append to somwhere holding
+        // only msg.sender + receiver message
+        var from = msg.from;
+        var li = $('<li>').addClass('item').text(msg.msg);
+        $('ul').append(li);
+      });
+      $rootScope.listenerSet = true;
+    }
   };
 
   $scope.displayMessage();
@@ -42,9 +39,12 @@ app.controller('SpecificMatchCtrl', function($scope, $state, $ionicModal/*, sock
   $scope.closeModal = function() {
     $scope.modal.hide();
   };
+  
   //Cleanup the modal when we're done with it!
   $scope.$on('$destroy', function() {
-    $scope.modal.remove();
+    if ($scope.modal) {
+      $scope.modal.remove();
+    }
   });
   // Execute action on hide modal
   $scope.$on('modal.hidden', function() {
